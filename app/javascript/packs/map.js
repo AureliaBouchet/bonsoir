@@ -40,31 +40,6 @@ if (eventTabMapBtn) {
   });
 }
 
-// grande map
-const eventTabMapBtnLarge = document.getElementById("map-md");
-if (eventTabMapBtnLarge) {
-  eventTabMapBtnLarge.addEventListener('click', () => {
-    window.setTimeout( () => {
-      const mapElementMd = document.getElementById('map_md');
-      mapElementMd.cssText = "width:100%; height: 600px;";
-      if (mapElementMd) { // don't try to build a map if there's no div#map to inject in
-        const mapMd = new GMaps({ el: '#map_md', lat: 0, lng: 0 });
-        const markersMd = JSON.parse(mapElementMd.dataset.markers);
-        mapMd.addMarkers(markersMd);
-        if (markersMd.length === 0) {
-          mapMd.setZoom(2);
-        } else if (markersMd.length === 1) {
-          mapMd.setCenter(markersMd[0].lat, markersMd[0].lng);
-          mapMd.setZoom(14);
-        } else {
-          mapMd.fitLatLngBounds(markersMd);
-        }
-      }
-    } , 100);
-  });
-}
-
-
 autocomplete();
 
 // const styles = [ /* the style copied from https://snazzymaps.com/ */ ];
