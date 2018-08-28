@@ -11,6 +11,8 @@ gem 'redis'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'geocoder'
+gem 'pg_search'
+gem 'flatpickr_rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
