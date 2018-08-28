@@ -1,0 +1,35 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+   <%= link_to "Bonsoir", events_path, class: "navbar-wagon-brand logo" %>
+
+
+ <div class="search-box">
+  <%= form_tag events_path, class: "new-search-bar", method: :get do %>
+    <%= label :date, "Date : " %>
+    <%= text_field_tag :date, params[:date] %>
+
+    <%= label :location, "Cherchez à proximité de : " %>
+    <%= text_field_tag :location, params[:location] %>
+
+    <%= label :distance, "Distance : " %>
+    <%= text_field_tag :distance, params[:distance] %>
+
+    <%= submit_tag value="Go", class: "btn-default"  %>
+  <% end %>
+ </div>
+
+  <!-- Right Navigation -->
+
+
+<!-- LARGE DEVICE -->
+
+
+
+
+  <!-- SMALL DEVICE -->
+
+
+</div>
+
+
+
