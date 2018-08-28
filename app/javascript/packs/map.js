@@ -18,10 +18,5 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 import { autocomplete } from '../components/autocomplete';
 autocomplete();
 
-const styles = [ /* the style copied from https://snazzymaps.com/ */ ];
 
-map.addStyle({
-  styles: styles,
-  mapTypeId: 'map_style'
-});
-map.setStyle('map_style');
+
