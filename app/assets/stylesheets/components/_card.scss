@@ -26,10 +26,10 @@
   opacity: 1;
 }
 .card:hover .circle-white{
- background-color: $light-gray;
+  background-color: $light-gray;
 }
 .card:hover .card-description{
- background-color: $light-gray;
+  background-color: $light-gray;
 }
 .circle-white{
   z-index:20;
@@ -70,3 +70,5 @@
     margin:0;
   }
 }
+
+
