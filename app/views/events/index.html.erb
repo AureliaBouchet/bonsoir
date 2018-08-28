@@ -33,21 +33,23 @@
 
 <!-- TAB CARTE -->
     <div role="tabpanel" class="tab-pane" id="carte">
-      <div
-        id="map_xs"
-        style="width: 100%;
-        height: 600px;"
-        data-markers="<%= @markers.to_json %>">
+      <div class="map-container">
+        <div
+          id="map_xs"
+          style="width: 100%;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>">
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-
 <!-- BIG DEVICE -->
-<div class="hidden-xs">
+<div class="hidden-xs ">
+
   <ul class="nav nav-tabs tab-color" role="tablist">
-   <li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab">A l'affiche</a></li>
+    <li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab">A l'affiche</a></li>
     <li role="presentation" id="map-md"><a href="#carte" aria-controls="carte" role="tab" data-toggle="tab">Carte</a></li>
   </ul>
 
@@ -59,28 +61,30 @@
             <div class="card">
               <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path event.photo, crop: :fill %>);">
               </div>
-                <div class="card-description">
-                  <h2><%=event.title%></h2>
-                  <p><%=event.venue%></p>
-                  <p><%=event.time.strftime("%H:%M") %></p>
-                  <p><%=event.price%></p>
-                </div>
-
-
+              <div class="card-description">
+                <h2><%=event.title%></h2>
+                <p><%=event.venue%></p>
+                <p><%=event.time.strftime("%H:%M") %></p>
+                <p><%=event.price%></p>
+              </div>
             </div>
           </div>
         <% end %>
       </div>
     </div>
+  </div>
+</div>
 
-    <div role="tabpanel" class="tab-pane" id="carte">
+
+  <div role="tabpanel" class="tab-pane" id="carte">
+    <div class="map-container">
       <div
-        id="map-md"
+        id="map_md"
         style="width: 100%;
-        height: 600px;"
+        height: 100vh;"
         data-markers="<%= @markers.to_json %>">
       </div>
     </div>
-
   </div>
+
 </div>
