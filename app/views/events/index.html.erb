@@ -1,0 +1,62 @@
+<h1>Events</h1>
+
+
+
+<ul class="nav nav-tabs nav-perso" role="tablist">
+  <li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab"><i class="fas fa-list-ul"> </i> À l'affiche</a></li>
+  <li role="presentation" id="map-xs"><a href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker"> </i> Carte</a></li>
+</ul>
+
+
+<!-- SMALL DEVICE -->
+<!-- TABS -->
+
+<!-- TAB CARDS -->
+  <div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane active" id="list">
+      <div class="row">
+
+        <% @events.each do |event| %>
+          <div class="col-xs-10 offset-xs-1 col-sm-6 col-md-4">
+          <!-- Card de face -->
+                  <div class="card " style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
+                    <div class="circle-white">
+                      <%=event.time.strftime("%H:%M") %>
+                    </div>
+                <!-- Card retournée -->
+                    <div class="card-hover">
+                      <div class="event-details">
+                          <p><%=event.description%></p>
+                          <p><%=event.price%></p>
+                          <p><%=event.address%></p>
+                      </div>
+                      <a href="">"Réserver"</a>
+                    </div>
+                <!-- Card description -->
+                    <div class="card-description">
+                      <h2><%=event.title%></h2>
+                      <p><%=event.venue%></p>
+                    </div>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+
+<!-- TAB CARTE -->
+    <div role="tabpanel" class="tab-pane" id="carte">
+      <div class="map-container">
+        <div
+          id="map_xs"
+          style="width: 100%;
+          height: 500px;
+          margin-top: 15px;"
+          data-markers="<%= @markers.to_json %>">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
