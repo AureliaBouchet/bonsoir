@@ -18,7 +18,8 @@ class EventsController < ApplicationController
         icon: {
           url: 'map_marker.png',
 
-        }
+        },
+        infoWindow: { content: render_to_string(partial: "/events/map_box", locals: { event: event }) }
       }
 
     end

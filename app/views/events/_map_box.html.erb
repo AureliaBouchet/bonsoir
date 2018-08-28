@@ -1,0 +1,9 @@
+<div class="info-window">
+    <div class="card card-small " style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
+
+      <div class="card-description ">
+        <h2><%=event.title%></h2>
+        <p> <%=event.time.strftime("%H:%M") %></p>
+      </div>
+    </div>
+</div>

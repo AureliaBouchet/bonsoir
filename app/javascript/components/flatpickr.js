@@ -1,8 +1,8 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/themes/confetti.css";
 import "flatpickr/dist/flatpickr.min.css";
-import {French} from "flatpickr/dist/l10n/fr.js";
 
+import {French} from "flatpickr/dist/l10n/fr.js";
 
 
 flatpickr("#date", {
@@ -16,6 +16,6 @@ flatpickr("#date", {
  // dateFormat: "d-m-Y"
  // defaultDate: Date.today
  // plugins: [new rangePlugin({ input: "#reservation_date_end"})]
-})
 
+});
 
