@@ -1,35 +1,33 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-   <%= link_to "Bonsoir", events_path, class: "navbar-wagon-brand logo" %>
+   <%= link_to "Bonsoir.", events_path, class: "navbar-wagon-brand logo" %>
 
 
- <div class="search-box">
-  <%= form_tag events_path, class: "new-search-bar", method: :get do %>
-    <%= label :date, "Date : " %>
-    <%= text_field_tag :date, params[:date] %>
+   <div class="search-box">
+    <%= form_tag events_path, class: "new-search-bar", method: :get, class: "form-inline" do %>
+      <div class="form-group">
+        <%= label :date, "Date souhaitée : " %>
+        <%= text_field_tag :date, params[:date], value: Date.today.strftime('%Y-%m-%d'), class: "form-control" %>
+      </div>
 
-    <%= label :location, "Cherchez à proximité de : " %>
-    <%= text_field_tag :location, params[:location] %>
+      <div class="form-group">
+        <%= label :location, "A proximité de : " %>
+        <%= text_field_tag :location, params[:location], class: "form-control" %>
+      </div>
 
-    <%= label :distance, "Distance : " %>
-    <%= text_field_tag :distance, params[:distance] %>
+      <div class="form-group">
+        <%= label :distance, "Dans un rayon de : " %>
+        <%= text_field_tag :distance, params[:distance], placeholder: "3 km", class: "form-control" %>
+      </div>
 
-    <%= submit_tag value="Go", class: "btn-default"  %>
-  <% end %>
- </div>
-
-  <!-- Right Navigation -->
-
-
-<!-- LARGE DEVICE -->
-
-
-
-
-  <!-- SMALL DEVICE -->
-
+      <%= submit_tag value="Go", class: "btn btn-default"  %>
+    <% end %>
+   </div>
 
 </div>
+
+
+
 
 
 

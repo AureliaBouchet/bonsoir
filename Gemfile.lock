@@ -73,6 +73,8 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    flatpickr_rails (1.1.0)
+      railties (>= 3.0)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
     geocoder (1.5.0)
@@ -223,6 +225,7 @@ DEPENDENCIES
   carrierwave (~> 1.2)
   cloudinary
   dotenv-rails
+  flatpickr_rails
   font-awesome-sass (~> 5.0.9)
   geocoder
   jbuilder (~> 2.0)

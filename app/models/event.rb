@@ -4,10 +4,4 @@ class Event < ApplicationRecord
 
  mount_uploader :photo, PhotoUploader
 
-include PgSearch
-  pg_search_scope :search_by_address,
-    against: [ :address ],
-    using: {
-      tsearch: { prefix: true }
-    }
 end

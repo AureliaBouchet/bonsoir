@@ -1,23 +1,26 @@
 class EventsController < ApplicationController
   def index
-
-     if params[:date].present?
-      @events = Event.where(date: params[:date].blank? ? Date.today : params[:date])
-      if params[:location].present?
-        @near_events = @events.near(params[:location], params[:distance].blank? ? 3 : params[:distance])
-      else
-        @near_events = @events.where.not(latitude: nil, longitude: nil)
-      end
+    if params[:date].present? && params[:location].present?
+      @events = Event.where(date: params[:date]).near(params[:location], params[:distance].blank? ? 3 : params[:distance])
+    elsif params[:date].present? && params[:location].empty?
+      @events = Event.where(date: params[:date])
+    elsif params[:date].empty? && params[:location].present?
+      @events = Event.near(params[:location], params[:distance].blank? ? 3 : params[:distance])
+    else
+      @events = Event.all
     end
 
-    @markers = @near_events.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }
+    @markers = @events.map do |event|
+        {
+          lat: event.latitude,
+          lng: event.longitude
+        }
     end
   end
-end
+
+  end
+
+
+
 
 
