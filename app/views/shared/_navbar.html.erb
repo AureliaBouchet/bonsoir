@@ -1,13 +1,14 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-   <%= link_to "Bonsoir.", events_path, class: "navbar-wagon-brand logo" %>
+  <div class="navbar-wagon-brand">Bonsoir.</div>
+
 
 
    <div class="search-box">
     <%= form_tag events_path, class: "new-search-bar", method: :get, class: "form-inline" do %>
       <div class="form-group">
         <%= label :date, "Date souhaitée : " %>
-        <%= text_field_tag :date, params[:date], value: Date.today.strftime('%Y-%m-%d'), class: "form-control" %>
+        <%= text_field_tag :date, params[:date], class: "form-control" %>
       </div>
 
       <div class="form-group">
