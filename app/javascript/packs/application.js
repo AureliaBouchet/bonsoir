@@ -1,2 +1,2 @@
 import "bootstrap";
-import "../components/flatpickr"
+import "../components/flatpickr";

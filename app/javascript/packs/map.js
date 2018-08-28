@@ -27,6 +27,9 @@ if (eventTabMapBtn) {
         const mapXs = new GMaps({ el: '#map_xs', lat: 0, lng: 0 });
         const markersXs = JSON.parse(mapElementXs.dataset.markers);
         mapXs.addMarkers(markersXs);
+
+
+
         if (markersXs.length === 0) {
           mapXs.setZoom(2);
         } else if (markersXs.length === 1) {
@@ -35,6 +38,7 @@ if (eventTabMapBtn) {
         } else {
           mapXs.fitLatLngBounds(markersXs);
         }
+
         const styles = [
             {
                 "featureType": "administrative",
@@ -121,6 +125,8 @@ if (eventTabMapBtn) {
         });
         mapXs.setStyle('map_style');
               }
+
+
 
             } , 100);
   });
