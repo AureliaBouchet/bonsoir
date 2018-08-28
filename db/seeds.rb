@@ -18,7 +18,7 @@ event_four = Event.new(title: "POLO & PAN", description: "Polo & Pan voit le jou
 event_four.remote_photo_url = "https://www.fnacspectacles.com/static/0/visuel/600/393/FEDER_3935399244041550362.jpg?1532078219000"
 event_four.save
 
-event_five = Event.new(title: "PATRICK BRUEL TOURNEE 2019", description: "", category: "Concert", address: "PALAIS DES SPORTS, PORTE DE VERSAILLES, 75015 PARIS 15", date:"07/09/2018", time: "20:30", price: 55, venue: "PALAIS DES SPORTS")
+event_five = Event.new(title: "PATRICK BRUEL TOURNEE 2019", description: "", category: "Concert", address: "PALAIS DES SPORTS, PORTE DE VERSAILLES, 75015 PARIS 15", date:"28/08/2018", time: "20:30", price: 55, venue: "PALAIS DES SPORTS")
 event_five.remote_photo_url = "https://www.fnacspectacles.com/static/0/visuel/310/353/PATRICK-BRUEL_3532646447168821480.jpg?1529483988000"
 event_five.save
 
