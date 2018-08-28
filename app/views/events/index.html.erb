@@ -13,6 +13,7 @@
 
 <!-- TAB CARDS -->
   <div class="tab-content">
+
     <div role="tabpanel" class="tab-pane active" id="list">
       <div class="row">
 
@@ -43,13 +44,15 @@
           </div>
         </div>
 
+
 <!-- TAB CARTE -->
     <div role="tabpanel" class="tab-pane" id="carte">
       <div class="map-container">
         <div
           id="map_xs"
           style="width: 100%;
-          height: 600px;"
+          height: 500px;
+          margin-top: 15px;"
           data-markers="<%= @markers.to_json %>">
         </div>
       </div>
