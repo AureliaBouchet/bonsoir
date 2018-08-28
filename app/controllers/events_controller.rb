@@ -5,8 +5,11 @@ class EventsController < ApplicationController
     @markers = @events.map do |event|
       {
         lat: event.latitude,
-        lng: event.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        lng: event.longitude,
+        icon: {
+          url: 'map_marker.png',
+
+        }
       }
     end
   end
