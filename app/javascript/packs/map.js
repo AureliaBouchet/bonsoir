@@ -22,7 +22,7 @@ if (eventTabMapBtn) {
   eventTabMapBtn.addEventListener('click', () => {
     window.setTimeout( () => {
       const mapElementXs = document.getElementById('map_xs');
-      mapElementXs.cssText = "width:100%; height: 600px;";
+      mapElementXs.cssText = "width:100%; height: 500px;";
       if (mapElementXs) { // don't try to build a map if there's no div#map to inject in
         const mapXs = new GMaps({ el: '#map_xs', lat: 0, lng: 0 });
         const markersXs = JSON.parse(mapElementXs.dataset.markers);
@@ -35,19 +35,97 @@ if (eventTabMapBtn) {
         } else {
           mapXs.fitLatLngBounds(markersXs);
         }
-      }
-    } , 100);
+        const styles = [
+            {
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#444444"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#f2f2f2"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "saturation": -100
+                    },
+                    {
+                        "lightness": 45
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#4f595d"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            }
+        ];
+        mapXs.addStyle({
+          styles: styles,
+          mapTypeId: 'map_style'
+        });
+        mapXs.setStyle('map_style');
+              }
+
+            } , 100);
   });
 }
 
 autocomplete();
 
-// const styles = [ /* the style copied from https://snazzymaps.com/ */ ];
-
-
-// map.addStyle({
-//   styles: styles,
-//   mapTypeId: 'map_style'
-// });
-// map.setStyle('map_style');
 
