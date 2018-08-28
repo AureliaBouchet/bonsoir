@@ -67,8 +67,8 @@ if (eventTabMapBtnLarge) {
 
 autocomplete();
 
-
 // const styles = [ /* the style copied from https://snazzymaps.com/ */ ];
+
 
 // map.addStyle({
 //   styles: styles,
