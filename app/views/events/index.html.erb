@@ -15,34 +15,33 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="list">
       <div class="row">
+
         <% @events.each do |event| %>
           <div class="col-xs-10 offset-xs-1 col-sm-6 col-md-4">
-            <!-- Card de face -->
-            <div class="card" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
-                <div class="circle-white">
-                  <%=event.time.strftime("%H:%M") %>
-                </div>
-
-            <!-- Card retournée -->
-                <div class="card-hover">
-                  <div class="event-details">
-                      <p><%=event.description%></p>
-                      <p><%=event.price%></p>
-                      <p><%=event.address%></p>
+          <!-- Card de face -->
+                  <div class="card " style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
+                    <div class="circle-white">
+                      <%=event.time.strftime("%H:%M") %>
+                    </div>
+                <!-- Card retournée -->
+                    <div class="card-hover">
+                      <div class="event-details">
+                          <p><%=event.description%></p>
+                          <p><%=event.price%></p>
+                          <p><%=event.address%></p>
+                      </div>
+                      <a href="">"Réserver"</a>
+                    </div>
+                <!-- Card description -->
+                    <div class="card-description">
+                      <h2><%=event.title%></h2>
+                      <p><%=event.venue%></p>
+                    </div>
                   </div>
-                  <a href="">"Réserver"</a>
-                </div>
-            <!-- Card description -->
-                <div class="card-description">
-                  <h2><%=event.title%></h2>
-                  <p><%=event.venue%></p>
-                </div>
-            </div>
-
+              </div>
+            <% end %>
           </div>
-        <% end %>
-      </div>
-    </div>
+        </div>
 
 <!-- TAB CARTE -->
     <div role="tabpanel" class="tab-pane" id="carte">
