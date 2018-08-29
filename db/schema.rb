@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_135308) do
+ActiveRecord::Schema.define(version: 2018_08_29_175701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 2018_08_27_135308) do
     t.float "longitude"
     t.string "artist"
     t.time "time"
+    t.string "url_zoom"
+    t.integer "rating"
+    t.integer "top_rating"
   end
 
 end
