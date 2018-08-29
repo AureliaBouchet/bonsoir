@@ -1,0 +1,32 @@
+.banner-container{
+position: relative;
+min-height: 100vh;
+}
+
+.banner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:10;
+  width:100vw;
+  height:100vh;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.2)),
+    asset-url('bonsoir_home1.jpeg');
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  text-align: center;
+  p{
+    color:white;
+  }
+}
+
+.banner-title{
+  margin-bottom:100px;
+}

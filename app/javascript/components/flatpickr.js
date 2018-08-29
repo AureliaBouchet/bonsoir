@@ -1,11 +1,23 @@
-import flatpickr from "flatpickr"
-import "flatpickr/dist/themes/confetti.css"
-import "flatpickr/dist/flatpickr.min.css"
+import flatpickr from "flatpickr";
+import "flatpickr/dist/themes/confetti.css";
+import "flatpickr/dist/flatpickr.min.css";
+
+import {French} from "flatpickr/dist/l10n/fr.js";
+
 
 flatpickr("#date", {
- altInput: true, // It creates another hidden field in your form so that November 4, 2017 is displayed to the user while the server receives database-friendly format: 2017-11-14
+ altInput: true,
+ altFormat: "j F Y",
+
+  // dateFormat: "d-m-Y", // It creates another hidden field in your form so that November 4, 2017 is displayed to the user while the server receives database-friendly format: 2017-11-14
  // dateFormat: "d.m.Y",
- time_24hr: true
- // defaultDate: Date.today
+ time_24hr: true,
+ minDate: 'today',
+ maxDate: new Date().fp_incr(7),
+ locale: French
+
+ // dateFormat: "d-m-Y"
  // plugins: [new rangePlugin({ input: "#reservation_date_end"})]
-})
+
+});
+
