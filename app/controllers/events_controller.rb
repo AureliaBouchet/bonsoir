@@ -13,7 +13,6 @@ class EventsController < ApplicationController
     end
 
     @markers = @events.map do |event|
-
       {
         lat: event.latitude,
         lng: event.longitude,
@@ -23,11 +22,21 @@ class EventsController < ApplicationController
         },
         infoWindow: { content: render_to_string(partial: "/events/map_box", locals: { event: event }) }
       }
-
     end
-  end
+
+    location_r = Geocoder.search(params[:location])
+    @markers << {
+      lat: location_r[0].data["geometry"]["location"]["lat"],
+      lng: location_r[0].data["geometry"]["location"]["lng"],
+      icon: {
+        url: 'markers-google-api-red.png',
+      },
+      title: "Vous êtes ici",
+    }
 
   end
+
+end
 
 
 

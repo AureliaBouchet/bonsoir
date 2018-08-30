@@ -17,6 +17,7 @@ function geolocate() {
       }
     );
   }
+
 }
 
 export { geolocate };
