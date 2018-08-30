@@ -19,7 +19,7 @@
           <!-- Card de face -->
                   <div class="card card-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
                     <div class="circle-white">
-                      <%=event.time.strftime("%H:%M") %>
+                      <%=event.time %>
                     </div>
                 <!-- Card retournée -->
                     <div class="card-hover">
