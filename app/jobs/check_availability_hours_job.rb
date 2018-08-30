@@ -7,6 +7,7 @@ class CheckAvailabilityHoursJob < ApplicationJob
   def perform(events)
 
     count = 0
+    new_events = []
       #faire le tri sur la liste des events triés selon notre algo
       events.each do |event|
         if count < 5
@@ -32,13 +33,14 @@ class CheckAvailabilityHoursJob < ApplicationJob
           event.destroy
           #puts "event destroyé"
         else
-          event.update(time: heure_string)
+          new_events << event.update(time: heure_string)
           count = count + 1
+
           # puts count
           #puts "event updaté"
         end
       end
-
+      new_events
     end
   end
 end
