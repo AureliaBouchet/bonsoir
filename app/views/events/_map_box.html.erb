@@ -2,9 +2,11 @@
     <div class="card card-small " style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
 
       <div class="card-description ">
-        <h2><%=event.title%> <%="-"%> <%=event.time.strftime("%H:%M")%></h2>
+
+        <h2><%=event.title%> <%="-"%> <%=event.time %></h2>
         <p><%=event.address%></p>
         <p><%=event.price%></p>
+
       </div>
 
       <div class="card-hover">

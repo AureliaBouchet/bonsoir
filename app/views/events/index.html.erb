@@ -1,3 +1,8 @@
+
+
+<p class="msg-result"><em>Voici les <%= @events.size %> pièces de théatre sélectionnées par l'équipe de Bonsoir pour vous</em></p>
+
+
 <ul class="nav nav-tabs nav-perso" role="tablist">
   <li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab"><i class="fas fa-list-ul"> </i> À l'affiche</a></li>
   <li role="presentation" id="map-xs"><a href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker"> </i> Carte</a></li>
@@ -19,7 +24,7 @@
           <!-- Card de face -->
                   <div class="card card-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
                     <div class="circle-white">
-                      <%=event.time.strftime("%H:%M") %>
+                      <%=event.time %>
                     </div>
                 <!-- Card retournée -->
                     <div class="card-hover">
