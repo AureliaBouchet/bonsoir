@@ -107,7 +107,7 @@ class NightJob < ApplicationJob
         if result_page < total_result
           page += 1
           result_page +=10
-          run = false
+          run = true
         else
           run = false
         end
