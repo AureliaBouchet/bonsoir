@@ -1,5 +1,5 @@
 .card {
-  border-radius:4px;
+  border-radius:2px;
   margin:30px 0;
   position:relative;
   background-size: cover !important;
@@ -39,6 +39,7 @@
   top:-20px;
   right:-20px;
   font-size:14px;
+  font-weight: bold;
   height:50px;
   width:50px;
   display: flex;
@@ -49,34 +50,72 @@
 .card-description{
   z-index:20;
   box-shadow: 0px 0px 5px rgba(23, 29, 38,0.22);
-  border-radius:4px;
+  border-radius:2px;
   position: absolute;
   bottom:0;
-  padding: 5px 10px;
+  padding: 5px 5px;
   background-color: rgba(255, 255, 255, 0.9);
   color: rgb(23, 29, 38);
   width:100%;
   height:15%;
+  vertical-align: center;
+
   h2 {
-    font-size:20px;
+    font-size:18px;
     padding:0;
     margin:0;
+    font-weight: bold;
   }
-  p{
-    font-size: 14px;
+  h3 {
+    font-size:14px;
     padding:0;
     margin:0;
+    font-weight: bold;
+  }
+  p {
+    font-size: 12px;
+    padding:0;
+    margin:0;
+    font-weight: bold;
   }
 }
 
 .card-small {
   height: 270px;
   width: 200px;
+  margin: 0px;
+  background-size: cover !important;
+  h2 {
+    font-size:12px;
+    padding:0;
+    margin:0;
+  }
+  p{
+    font-size: 8px;
+    padding:0;
+    margin:0;
+  font-family: "Poiret One";
+  }
 }
 
 .card-big {
   height: 75vh;
-  width:320px;
+  width:350px;
 }
+
+a {
+  font-family: "Poiret One";
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+    opacity: 1;
+}
+
 
 
