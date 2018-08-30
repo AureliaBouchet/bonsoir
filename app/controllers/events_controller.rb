@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   def index
+    # raise
     params[:date] = Date.today.strftime('%Y-%m-%d') unless params[:date].present?
-    params[:location] = "Paris, France" unless params[:location].present?
+
     if params[:date].present? && params[:location].present?
       @events = Event.where(date: params[:date]).near(params[:location], params[:distance].blank? ? 10 : params[:distance])
     elsif params[:date].present? && params[:location].empty?
