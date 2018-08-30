@@ -1,0 +1,70 @@
+// "Ce soir"
+
+.form-control[readonly] {
+  background-color: transparent;
+  box-shadow: none;
+  transition: none;
+}
+
+// Haut du calendrier
+
+.flatpickr-calendar {
+  background: rgba(4,7,17,1);
+}
+
+// Corps du calendrier
+
+.flatpickr-innerContainer {
+  background: rgba(4,7,17,1);
+}
+
+// Jours non disponibles
+
+.flatpickr-day.disabled {
+  color: white;
+}
+
+// Jours disponibles
+
+.flatpickr-day {
+  color: red;
+}
+
+.flatpick-day.selected{
+  color: red;
+}
+
+// Ligne supérieure jours de la semaine
+
+.flatpickr-weekday {
+  color: white !important;
+}
+
+// Ligne supérieure mois
+
+.flatpickr-month {
+  color: white !important;
+}
+
+// Ligne supérieure année
+
+.numInput.cur-year {
+  color: white !important;
+}
+
+// Flèches mois suivant et précédent
+
+.flatpickr-next-month {
+  fill: white !important;
+}
+
+.flatpickr-prev-month {
+  fill: white !important;
+}
+
+
+.flatpickr-day.nextMonthDay {
+  color: white;
+}
+
+

@@ -16,6 +16,8 @@ flatpickr("#date", {
  maxDate: new Date().fp_incr(7),
  locale: French
 
+
+
  // dateFormat: "d-m-Y"
  // plugins: [new rangePlugin({ input: "#reservation_date_end"})]
 
