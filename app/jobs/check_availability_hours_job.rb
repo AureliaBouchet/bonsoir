@@ -4,12 +4,12 @@ require 'nokogiri'
 class CheckAvailabilityHoursJob < ApplicationJob
   queue_as :default
 
-  def perform
+  def perform(events)
 
-    # count = 0
+    count = 0
       #faire le tri sur la liste des events triés selon notre algo
-      Event.all.each do |event|
-        # if count < 5
+      events.each do |event|
+        if count < 5
         url_event = event.url_zoom.gsub('evt.htm', 'evtbook.htm')
         day_event = event.date.day
         month_event = event.date.month
@@ -33,7 +33,7 @@ class CheckAvailabilityHoursJob < ApplicationJob
           #puts "event destroyé"
         else
           event.update(time: heure_string)
-          # count = count + 1
+          count = count + 1
           # puts count
           #puts "event updaté"
         end
