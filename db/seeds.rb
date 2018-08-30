@@ -1,3 +1,4 @@
+
 # require 'open-uri'
 # require 'nokogiri'
 
@@ -153,11 +154,5 @@
 #   event.update(time: heure_string)
 #   #puts "event updaté"
 # end
-
-
-
-
-
-
 
 
