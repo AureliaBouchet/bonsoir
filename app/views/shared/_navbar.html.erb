@@ -7,17 +7,17 @@
    <div class="search-box">
     <%= form_tag events_path, class: "new-search-bar", method: :get, class: "form-inline" do %>
       <div class="form-group">
-        <%= label :date, "Date souhaitée : " %>
+
         <%= text_field_tag :date, params[:date], class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= label :location, "À proximité de : " %>
+
         <%= text_field_tag :location, params[:location], class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= label :distance, "Dans un rayon de : " %>
+
         <%= text_field_tag :distance, params[:distance], placeholder: "10 km", class: "form-control" %>
       </div>
 
