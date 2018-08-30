@@ -27,17 +27,20 @@ dates.each do |d|
     url = "https://www.billetreduc.com/search.htm?cp=Paris&dt=#{d.year}-#{d_month}&idrub=103,68,90&jj=#{d_day}&nbsalle=0&prix=0&tri=date&type=3,3&LISTEPEpg=#{page}"
 
     html_file = open(url).read
+
     html_doc = Nokogiri::HTML(html_file)
 
     count=0
-    html_doc.search('.bgmulti tr td').each do |elt|
-      if count<1
-        count+=1
-        total_result = elt.text.strip.split.first.to_i
-      end
-    end
+    html_doc.search('.bgmulti tr td')[0].text.strip.split.first.to_i
+    # html_doc.search('.bgmulti tr td').each do |elt|
+    #   if count<1
+    #     count+=1
+    #     total_result = elt.text.strip.split.first.to_i
+    #   end
+    # end
 
     html_doc.search('#preliste tr').each do |element|
+      puts "il se passe ça ... #{Time.now}"
      event_hash = {}
       element.search('.head').each do |elt|
         title = elt.text.strip
@@ -97,6 +100,7 @@ dates.each do |d|
 
       event.save
       # p event
+      puts "event créé ... #{Time.now}"
     end
 
     if result_page < total_result
