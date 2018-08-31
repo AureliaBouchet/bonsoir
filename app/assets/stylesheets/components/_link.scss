@@ -1,0 +1,8 @@
+.link {
+  text-decoration: none !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  &:hover{
+    text-decoration: none;
+  }
+}
