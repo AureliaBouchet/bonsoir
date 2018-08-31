@@ -118,5 +118,13 @@ a:hover {
     opacity: 1;
 }
 
+.btn-primary{
+  background: rgba(4,7,17,0.8);
+  border-color: rgba(4,7,17,0.8);
+}
 
+.btn-primary:hover {
+  background: rgba(4,7,17,1);
+  border-color: rgba(4,7,17,0.8);
+}
 
