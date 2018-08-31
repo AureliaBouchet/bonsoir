@@ -13,7 +13,7 @@ flatpickr("#date", {
  // dateFormat: "d.m.Y",
  time_24hr: true,
  minDate: 'today',
- maxDate: new Date().fp_incr(7),
+ maxDate: new Date().fp_incr(6),
  locale: French
 
 
