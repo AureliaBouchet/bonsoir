@@ -1,6 +1,16 @@
+<% if @events.size == 0 %>
+  <p class="msg-zero-result">Les pièces de théatres sélectionnées par notre intelligence artificielle pour vous affichent complet!<br><br>
+  Elargissez votre périmètre géographique ou choisissez une autre soirée!</p>
 
-
-<p class="msg-result"><em>Voici les <%= @events.size %> pièces de théatre sélectionnées par l'équipe de Bonsoir pour vous</em></p>
+<% else %>
+  <% if @events.size == 1 %>
+    <p class="msg-result">Il ne reste plus qu'une pièce de théatre disponible autour de vous! Courrez-y ou élargissez vos critères de recherche! </p>
+  <% elsif @events.size == 5 %>
+    <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées pour vous! <br> Bonsoir!</p>
+  <% else %>
+     <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées pour vous!</p>
+      <p class="msg-result">Pour afficher 5 pièces sélectionnées par Bonsoir, élargissez votre périmètre géographique ou choisissez une autre soirée.</p>
+  <% end %>
 
 
 <ul class="nav nav-tabs nav-perso" role="tablist">
@@ -62,6 +72,6 @@
       </div>
     </div>
   </div>
-
+<% end %>
 
 
