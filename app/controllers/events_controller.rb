@@ -2,11 +2,10 @@ class EventsController < ApplicationController
   def index
 
     params[:date] = Date.today.strftime('%Y-%m-%d') unless params[:date].present?
+
     if params[:date].present? && params[:location].present?
       events = Event.where(date: params[:date]).near(params[:location], params[:distance].blank? ? 10 : params[:distance]).select {|event| event.rating}.sort_by(&:rating).reverse
       @events = CheckAvailabilityHoursJob.perform_now(events)
-
-
     elsif params[:date].present? && params[:location].empty?
       events = Event.where(date: params[:date]).select {|event| event.rating}.sort_by(&:rating).reverse
       @events = CheckAvailabilityHoursJob.perform_now(events)
@@ -15,11 +14,35 @@ class EventsController < ApplicationController
       @events = CheckAvailabilityHoursJob.perform_now(events)
     else
       events = Event.all.select {|event| event.rating}.sort_by(&:rating).reverse
-      @events = CheckAvailabilityHoursJob.perform_now(@events)
-
+      @events = CheckAvailabilityHoursJob.perform_now(events)
     end
 
+
+   @generated_coord = []
+
     @markers = @events.map do |event|
+      #  {
+      #   lat: event.latitude,
+      #   lng: event.longitude
+      # }
+      # doublons = generated_coord.find_all do |e|
+      #   generated_coord.count(e) > 1
+      # end
+      @generated_coord.each do |coord|
+        if coord[:lng] == event.longitude || coord[:lat] == event.latitude
+          event.longitude += 1/1000.to_f
+          event.latitude -= 1/10000.to_f
+        end
+
+      end
+     @generated_coord <<  {
+        lat: event.latitude,
+        lng: event.longitude
+      }
+
+
+
+
       {
         lat: event.latitude,
         lng: event.longitude,
@@ -42,7 +65,6 @@ class EventsController < ApplicationController
     }
 
   end
-
 end
 
 

@@ -1,11 +1,47 @@
 
+<div class="search-container">
+<div class="search-banner search-hidden">
+    <div class="search-box " id= "search-form">
+      <%= form_tag events_path, class: "new-search-bar", method: :get, class: "form-inline" do %>
+        <div class="row">
+          <div class="form-group", style = "margin-bottom: 10px">
+            <%= text_field_tag :date, params[:date], class: "form-control"%>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group ">
+            <%= text_field_tag :location, params[:location], class: "form-control", style: "color: white; background-color: transparent; border-bottom-color: white; margin-bottom: 10px" %>
+          </div>
+          <div class="form-group ">
+              <%= text_field_tag :distance, params[:distance], placeholder: "10 km", class: "form-control", style: "color: white; background-color: transparent; border-bottom-color: white;margin-bottom: 10px;" %>
+          </div>
+      </div>
+        <%= submit_tag value="Action !", class: "btn btn-default"  %>
+      <% end %>
+     </div>
+  </div>
+</div>
 
-<p class="msg-result"><em>Voici les <%= @events.size %> pièces de théatre sélectionnées par l'équipe de Bonsoir pour vous</em></p>
+
+<% if @events.size == 0 %>
+  <p class="msg-zero-result">Dommage! <br><br>Toutes les pièces de théatre autour de vous affichent complet<br><br>
+  Elargissez votre périmètre géographique ou choisissez une autre soirée</p>
+
+<% else %>
+  <% if @events.size == 1 %>
+    <p class="msg-result">Il ne reste plus qu'une pièce de théatre disponible autour de vous ce soir. Dépêchez-vous ou élargissez vos critères de recherche! </p>
+  <% elsif @events.size == 5 %>
+    <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p>
+  <% else %>
+     <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p>
+      <p class="msg-result">Pour afficher plus de résultats, élargissez vos critères de recherche.</p>
+  <% end %>
+
 
 
 <ul class="nav nav-tabs nav-perso" role="tablist">
   <li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab"><i class="fas fa-list-ul"> </i> À l'affiche</a></li>
-  <li role="presentation" id="map-xs"><a href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker"> </i> Carte</a></li>
+  <li role="presentation" id="map-xs"><a href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker"> </i> Sur la carte</a></li>
 </ul>
 
 
@@ -17,10 +53,11 @@
 
     <div role="tabpanel" class="tab-pane active" id="list">
 <div class="container">
-      <div class="row">
-
+    <!--   <div class="row"> -->
+<div class="card-container">
         <% @events.each do |event| %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
+          <!-- <div class="col-xs-12 col-sm-6 col-md-4"> -->
+
           <!-- Card de face -->
                   <div class="card card-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
                     <div class="circle-white">
@@ -30,20 +67,27 @@
                     <div class="card-hover">
                       <div class="event-details">
                           <p><%=event.description%></p>
+                          <p> <%= "-" %></p>
+                          <p> <%=event.price%></p>
                       </div>
-                      <a href="">Réserver auprès de notre partenaire Billet Réduc</a>
+                      <div class="text-center">
+                      <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.gsub('h', ':')}" + "#pricePart" %>
+                      <%= link_to "Réserver", url_booking, class: "btn btn-primary", target: '_blank' %>
+                    </div>
                     </div>
                 <!-- Card description -->
                     <div class="card-description">
                       <h2><%=event.title%></h2>
                       <p> <%= "-" %></p>
                       <h3><%=event.address%></h3>
-                      <p> <%=event.price%></p>
+                  <!--     <p> <%=event.price%></p> -->
                     </div>
                   </div>
-              </div>
+             <!--  </div> -->
             <% end %>
-          </div>
+
+            </div>
+         <!--  </div> -->
           </div>
         </div>
 
@@ -62,6 +106,6 @@
       </div>
     </div>
   </div>
-
+<% end %>
 
 

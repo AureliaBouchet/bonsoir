@@ -4,21 +4,28 @@
       <div class="card-description ">
 
         <h2><%=event.title%> <%="-"%> <%=event.time %></h2>
+        <p> <%= "-" %></p>
         <p><%=event.address%></p>
-        <p><%=event.price%></p>
+
 
       </div>
 
       <div class="card-hover">
         <div class="event-details">
             <p><%=event.description%></p>
+            <p> <%= "-" %></p>
+            <p><%=event.price%></p>
         </div>
         <br />
-        <a style="font-size: 10px" href="">Réserver auprès de notre partenaire Billet Réduc</a>
+        <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.gsub('h', ':')}" + "#pricePart" %>
+        <%= link_to "Réserver", url_booking, class: "btn btn-primary", target: '_blank' %>
+        <!-- <a style="font-size: 10px" href="" target="_blank" >Réserver auprès de notre partenaire Billet Réduc</a> -->
       </div>
 
 
     </div>
+end
+
 </div>
 
 

@@ -1,29 +1,45 @@
 <div class="navbar-wagon">
+
   <p>
-  <span id="logo-typed-text" style= "font-size: 50px; color: white;"></span>
+  <%= link_to root_path , class: "link" do %>
+   <span id="logo-typed-text" style= "font-size: 50px; color: white;"></span>
   </p>
+  <% end %>
 
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-   <div class="search-box">
-    <%= form_tag events_path, class: "new-search-bar", method: :get, class: "form-inline" do %>
-      <div class="form-group">
+     <div class="search-box" id="search-navbar">
+      <%= form_tag events_path, class: "new-search-bar", method: :get, class: "form-inline" do %>
 
-        <%= text_field_tag :date, params[:date], class: "form-control", style: "width: 130px; color: white; background-color: transparent; border-bottom-color: white;" %>
+          <div class="form-group">
+
+          <%= text_field_tag :date, params[:date], class: "form-control", style: "width: 130px; color: white; background-color: transparent; border-bottom-color: white;" %>
       </div>
 
-      <div class="form-group">
+        <div class="form-group">
 
-        <%= text_field_tag :location, params[:location], class: "form-control", style: "width: 350px; color: white; background-color: transparent; border-bottom-color: white;" %>
+          <%= text_field_tag :location, params[:location], class: "form-control", style: "width: 350px; color: white; background-color: transparent; border-bottom-color: white;" %>
       </div>
 
-      <div class="form-group">
+        <div class="form-group">
 
-        <%= text_field_tag :distance, params[:distance], placeholder: "10 km", class: "form-control", style: "width: 80px; color: white; background-color: transparent; border-bottom-color: white;"%>
-      </div>
+           <%= text_field_tag :distance, params[:distance], placeholder: "10 km", class: "form-control", style: "width: 80px; color: white; background-color: transparent; border-bottom-color: white;"%>
+        </div>
 
-      <%= submit_tag value="Action", class: "btn btn-default"  %>
-    <% end %>
-   </div>
+        <%= submit_tag value="Action !", class: "btn btn-default"  %>
+      <% end %>
+     </div>
+
+
+  </div>
+
+
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <button id="search", class="btn btn-primary"> <i class="fas fa-chevron-circle-down"> </i> Search</button> </h2>
+  </div>
+
+
+
 
 </div>
 

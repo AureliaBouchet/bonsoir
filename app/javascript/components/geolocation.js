@@ -6,18 +6,19 @@ function geolocate() {
     navigator.geolocation.getCurrentPosition(
       function(position) {
         geocoder.reverseGeocode(position.coords.latitude, position.coords.longitude, function (err, data ) {
-          console.log(data.results[0].formatted_address);
-          const geolocation_address = document.querySelector("#search-box-home #location");
-          console.log(geolocation_address);
-          geolocation_address.placeholder = data.results[0].formatted_address;
+          if (data.status === "OK") {
+            const geolocation_address = document.querySelector("#search-box-home #location");
+            geolocation_address.placeholder = data.results[0].formatted_address;
+          } else {
+            console.log(data.status);
+          }
         });
       },
       function(error) {
-        console.log(error)
+        console.log(error);
       }
     );
   }
-
 }
 
 export { geolocate };
