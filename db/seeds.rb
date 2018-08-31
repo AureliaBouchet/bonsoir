@@ -156,3 +156,58 @@
 # end
 
 
+#----- trouver url booking
+
+event = Event.last
+title = event.title
+url = event.url_zoom
+url_format = event.url_zoom.gsub('evt.htm', 'evtbook.htm')
+puts title
+puts url
+
+day_event = event.date.day.to_s
+month_event = event.date.month.to_s
+year_event = event.date.year.to_s
+heure_string = event.time
+
+puts day_event
+puts month_event
+puts year_event
+puts heure_string
+
+heure_format = heure_string.gsub('h', ':')
+puts heure_format
+
+url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.gsub('h', ':')}" + "#pricePart"
+puts url_booking
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

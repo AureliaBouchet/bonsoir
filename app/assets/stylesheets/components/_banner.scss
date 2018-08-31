@@ -32,6 +32,7 @@ min-height: 100vh;
   bottom: 10%;
 }
 
+
 .search-banner{
   // display:flex;
   // align-items:center;
@@ -44,4 +45,8 @@ min-height: 100vh;
   margin-bottom:60px;
   padding: 0 40px;
 
+
+.tagline {
+  position: relative;
+  bottom: -100px;
 }
