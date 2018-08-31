@@ -2,11 +2,10 @@ class EventsController < ApplicationController
   def index
 
     params[:date] = Date.today.strftime('%Y-%m-%d') unless params[:date].present?
+
     if params[:date].present? && params[:location].present?
       events = Event.where(date: params[:date]).near(params[:location], params[:distance].blank? ? 10 : params[:distance]).select {|event| event.rating}.sort_by(&:rating).reverse
       @events = CheckAvailabilityHoursJob.perform_now(events)
-
-
     elsif params[:date].present? && params[:location].empty?
       events = Event.where(date: params[:date]).select {|event| event.rating}.sort_by(&:rating).reverse
       @events = CheckAvailabilityHoursJob.perform_now(events)
@@ -15,8 +14,7 @@ class EventsController < ApplicationController
       @events = CheckAvailabilityHoursJob.perform_now(events)
     else
       events = Event.all.select {|event| event.rating}.sort_by(&:rating).reverse
-      @events = CheckAvailabilityHoursJob.perform_now(@events)
-
+      @events = CheckAvailabilityHoursJob.perform_now(events)
     end
 
 
