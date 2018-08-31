@@ -1,15 +1,16 @@
 .footer {
-  background: white;
+  background: #040711;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 30px;
   padding: 0px 50px;
-  color: black;
+  color: white;
   position: absolute;
   bottom:0 ; left: 0; right: 0;
   font-size: 16px;
   margin-top: 60px;
+  border-top: solid 1px white;
 }
 .footer-small {
   font-size: 12px;

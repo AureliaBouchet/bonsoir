@@ -16,7 +16,7 @@
               <%= text_field_tag :distance, params[:distance], placeholder: "10 km", class: "form-control", style: "color: white; background-color: transparent; border-bottom-color: white;margin-bottom: 10px;" %>
           </div>
       </div>
-        <%= submit_tag value="Action", class: "btn btn-default"  %>
+        <%= submit_tag value="Action !", class: "btn btn-default"  %>
       <% end %>
      </div>
   </div>
@@ -31,9 +31,9 @@
   <% if @events.size == 1 %>
     <p class="msg-result">Il ne reste plus qu'une pièce de théatre disponible autour de vous ce soir. Dépêchez-vous ou élargissez vos critères de recherche! </p>
   <% elsif @events.size == 5 %>
-    <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir!</p>
+    <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p>
   <% else %>
-     <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir!</p>
+     <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p>
       <p class="msg-result">Pour afficher plus de résultats, élargissez vos critères de recherche.</p>
   <% end %>
 
@@ -41,7 +41,7 @@
 
 <ul class="nav nav-tabs nav-perso" role="tablist">
   <li role="presentation" class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab"><i class="fas fa-list-ul"> </i> À l'affiche</a></li>
-  <li role="presentation" id="map-xs"><a href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker"> </i> Carte</a></li>
+  <li role="presentation" id="map-xs"><a href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker"> </i> Sur la carte</a></li>
 </ul>
 
 
@@ -67,6 +67,7 @@
                     <div class="card-hover">
                       <div class="event-details">
                           <p><%=event.description%></p>
+                          <p> <%= "-" %></p>
                           <p> <%=event.price%></p>
                       </div>
                       <div class="text-center">

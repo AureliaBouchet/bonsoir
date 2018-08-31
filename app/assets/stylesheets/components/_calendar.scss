@@ -30,6 +30,7 @@
 // Corps du calendrier
 
 .flatpickr-innerContainer {
+  z-index: 30;
   background: rgba(4,7,17,1);
 }
 
