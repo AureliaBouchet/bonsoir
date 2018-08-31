@@ -1,7 +1,7 @@
 import GMaps from 'gmaps/gmaps.js';
 import { autocomplete } from '../components/autocomplete';
-import { geolocate } from '../components/geolocation';
-geolocate();
+// import { geolocate } from '../components/geolocation';
+// geolocate();
 
 
 // const mapElement = document.getElementById('map');

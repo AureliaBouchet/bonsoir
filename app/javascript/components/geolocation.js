@@ -5,7 +5,6 @@ function geolocate() {
   if (banner) {
     navigator.geolocation.getCurrentPosition(
       function(position) {
-        geocoder.selectProvider("google",{"key": banner.dataset.googleApiBrowserKey});
         geocoder.reverseGeocode(position.coords.latitude, position.coords.longitude, function (err, data ) {
           if (data.status === "OK") {
             const geolocation_address = document.querySelector("#search-box-home #location");
