@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 // "Ce soir"
@@ -109,3 +110,15 @@
     fill: #f8f3f3;
 }
 
+.flatpickr-input {
+  color: white;
+}
+
+
+.form-control::placeholder {
+    color: white;
+  }
+
+.form-control::value {
+    color: white;
+  }
