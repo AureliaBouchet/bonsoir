@@ -20,13 +20,6 @@ class EventsController < ApplicationController
    @generated_coord = []
 
     @markers = @events.map do |event|
-      #  {
-      #   lat: event.latitude,
-      #   lng: event.longitude
-      # }
-      # doublons = generated_coord.find_all do |e|
-      #   generated_coord.count(e) > 1
-      # end
       @generated_coord.each do |coord|
         if coord[:lng] == event.longitude || coord[:lat] == event.latitude
           event.longitude += 1/1000.to_f
@@ -38,9 +31,6 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude
       }
-
-
-
 
       {
         lat: event.latitude,
