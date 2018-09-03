@@ -9,6 +9,7 @@ function DisplayingSearchWhenClick() {
 
       search.classList.toggle('search-hidden');
       search_navbar.classList.toggle('search-hidden');
+      // button.classList.toggle('search-hidden');
 
     });
   }

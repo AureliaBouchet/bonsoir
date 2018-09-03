@@ -1,5 +1,5 @@
 import Typed from 'typed.js';
-const home = document.getElementById('search-box-home')
+const home = document.querySelector('.banner')
 function loadDynamicLogoText() {
 if (home) {
   new Typed('#logo-typed-text', {

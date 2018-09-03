@@ -3,43 +3,36 @@
     <p>
       <span id="logo-typed-text" style= "color: white; font-size: 50px; font-family: 'Poiret One';"></span>
     </p>
-
-    <!-- <p><em>'Un théâtre ce soir, ça vous dirait ?'</em></p> -->
-   <br />
-   <p>Chaque jour, notre sélection des 5 meilleures pièces de théatre, disponibles autour de vous.</p>
+    <br />
+    <p>Chaque jour, notre sélection des 5 meilleures pièces de théatre, disponibles autour de vous.</p>
   </div>
+  <div class="form-home-section">
+    <%= render 'shared/search' %>
+  </div>
+  <div class="banner-arrow">
 
+    <%= link_to root_path(anchor: 'information'), class: "link" do %>
+    <i class="fas fa-caret-down"> </i>
 
-   <div class="search-box" id="search-box-home">
-    <%= form_tag events_path, class: "new-search-bar", method: :get do %>
-
-      <div class="row">
-        <div class="form-group col-md-12">
-
-          <%= text_field_tag :date, params[:date], placeholder: "Ce soir", class: "form-control" %>
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group col-md-9">
-
-          <%= text_field_tag :location, params[:location], class: "form-control", style: "color: white; background-color: transparent; border-bottom-color: white;" %>
-        </div>
-
-        <div class="form-group col-md-3">
-
-            <%= text_field_tag :distance, params[:distance], placeholder: "10 km", class: "form-control", style: "color: white; background-color: transparent; border-bottom-color: white;" %>
-        </div>
-      </div>
-
-      <%= submit_tag value="Action !", class: "btn btn-home" %>
-
-      <% end %>
-
-
+  <%end%>
 
   </div>
-  <div class="tagline">
- </div>
+</div>
+
+
+<div class="information-section" id="information">
+<div id="information" class="information-content">
+  <h2 class="text-center">Pourquoi Bonsoir.?</h2>
+  <div class="quality">
+    Qualité : une sélection réduite de pièces de théâtre afin de vous aider à faire votre choix
+  </div>
+
+  <div class="availability">
+    Disponibilité :temps réel
+  </div>
+
+  <div class="proximty">
+    Proximité : géolocalisation
+  </div>
+</div>
 </div>
