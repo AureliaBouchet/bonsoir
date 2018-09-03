@@ -4,14 +4,24 @@
   justify-content: center;
   align-items:center;
 }
+.card-border-white{
+  background-color:white;
+  padding:10px;
+  margin:30px 0;
+  border-radius:2px;
+  position:relative;
+  height:550px;
+  width:370px;
+}
 
 .card {
   border-radius:2px;
-  margin:30px 0;
   position:relative;
   background-size: cover !important;
   background-position: top;
   box-shadow: 0px 0px 5px rgba(255,255,255,0.22);
+  position:absolute;
+  top:70px;
 
 }
 
@@ -27,6 +37,8 @@
   transition: opacity 0.4s ease;
   padding: 20px;
   text-align:justify;
+  border-top:solid 1px black;
+  border-bottom:solid 1px black
 }
 .card:hover .card-hover {
   opacity: 1;
@@ -38,37 +50,40 @@
 }
 .card:hover .card-description{
   background-color: $light-gray;
+  box-shadow: 0px 0px 5px rgba(23, 29, 38,0.22);
 }
 .circle-white{
-  z-index:20;
-  border-radius:50%;
-  box-shadow: 0px 0px 5px rgba(23, 29, 38,0.22);
-  background-color:rgba(255, 255, 255, 0.9);
+  // z-index:20;
+  // border-radius:50%;
+  // box-shadow: 0px 0px 5px rgba(23, 29, 38,0.22);
+  // background-color:rgba(255, 255, 255, 1);
   color: rgb(23, 29, 38);
   position:absolute;
-  top:-20px;
-  right:-20px;
-  font-size:14px;
+  top:20px;
+  left:10px;
+  font-size:18px;
   font-weight: bold;
-  height:50px;
-  width:50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // height:60px;
+  // width:60px;
+  text-align:left;
+
+
 }
 
 .card-description{
   z-index:20;
-  box-shadow: 0px 0px 5px rgba(23, 29, 38,0.22);
   border-radius:2px;
   position: absolute;
-  bottom:0;
+  top:20px;
+  right:10px;
   padding: 5px 5px;
-  background-color: rgba(255, 255, 255, 0.9);
+  // background-color: rgba(255, 255, 255, 0.9);
   color: rgb(23, 29, 38);
-  width:100%;
-  height:15%;
+  // width:100%;
+  height:55px;
+  width: 250px;
   vertical-align: center;
+  text-align:right;
 
   h2 {
     font-size:18px;
@@ -109,7 +124,7 @@
 }
 
 .card-big {
-  height: 75vh;
+  height: 400px;
   width:350px;
 }
 
@@ -137,11 +152,27 @@ a:hover {
 .btn-primary{
   background: rgba(4,7,17,0.8);
   border-color: rgba(4,7,17,0.8);
+  a {
+    text-decoration:none !important;
+    font-style:normal !important;
+  }
 }
 
 
 .btn-primary:hover {
   background: rgba(4,7,17,1);
   border-color: rgba(4,7,17,0.8);
+}
+
+.links{
+  position:absolute;
+  bottom:10px;
+  left:10px;
+}
+
+.infos {
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
 }
 
