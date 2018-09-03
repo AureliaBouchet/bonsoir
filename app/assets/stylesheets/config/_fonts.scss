@@ -1,17 +1,14 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 @import url('https://fonts.googleapis.com/css?family=Poiret+One|Rajdhani:400,600');
+// @import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500');
+// @import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Rajdhani:500');
+// @import url('https://fonts.googleapis.com/css?family=Lato:300');
+// @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500');
 // Define fonts for body and headers
-$body-font: "Poiret One", "Helvetica", "sans-serif";
-$headers-font: "Poiret One", "Helvetica", "sans-serif";
-// $card-font:"Open Sans", "Helvetica", "sans-serif";
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+// $logo-font: "Poiret One", "Helvetica", "sans-serif";
+$body-font: "Quicksand", "Helvetica", "sans-serif";
+$headers-font: "Quicksand", "Helvetica", "sans-serif";
+// $card-font:"Open Sans", "Helvetica", "sans-serif";
