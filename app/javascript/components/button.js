@@ -10,9 +10,6 @@ function DisplayingSearchWhenClick() {
       search.classList.toggle('search-hidden');
       search_navbar.classList.toggle('search-hidden');
 
-      // navbar.classList.toggle('small-navbar');
-      // navbar.classList.toggle('big-navbar');
-      // button.classList.toggle('btn-background-lighter')
     });
   }
 }
