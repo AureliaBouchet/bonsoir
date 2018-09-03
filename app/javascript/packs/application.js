@@ -18,6 +18,7 @@ $('.slick-caroussel').slick({
  slidesToShow: 3,
  dots: true,
  centerMode: true,
+ speed:500,
  // centerPadding: '40px',
  // arrows: true,
  // infinite:true,
