@@ -1,25 +1,28 @@
 .footer {
-  background: #040711;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 30px;
-  padding: 0px 50px;
-  color: white;
   position: absolute;
   bottom:0 ; left: 0; right: 0;
-  font-size: 16px;
+  height: 30px;
+  background: #040711;
   margin-top: 60px;
   border-top: solid 1px white;
-}
-.footer-small {
-  font-size: 12px;
-}
-
-.footer .fa-heart {
+  padding: 0px 50px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
   color: white;
-}
+  font-size: 16px;
+  text-align: right;
+  font-family: "Poiret One"
 
-.empty {
-  height: 20px;
 }
+// .footer-small {
+//   font-size: 12px;
+// }
+
+// .footer .fa-heart {
+//   color: white;
+// }
+
+// .empty {
+//   height: 20px;
+// }

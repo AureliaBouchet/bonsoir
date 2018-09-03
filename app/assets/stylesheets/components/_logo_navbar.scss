@@ -2,7 +2,15 @@
   text-decoration: none !important;
   font-style: normal !important;
   font-weight: normal !important;
+  color: white !important;
+  font-family: "Poiret One" !important;
+  font-size: 50px;
+
   &:hover{
     text-decoration: none;
   }
+}
+
+.typed-cursor {
+ color: #040711;
 }
