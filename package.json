@@ -8,6 +8,7 @@
     "geocoder": "^0.2.3",
     "gmaps": "^0.4.24",
     "jquery": "^3.3.1",
+    "slick-carousel": "^1.8.1",
     "typed.js": "^2.0.9"
   },
   "devDependencies": {
