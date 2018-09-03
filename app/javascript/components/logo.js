@@ -14,7 +14,7 @@ function loadDynamicLogoTextNavbar() {
 const navbar = document.querySelector(('.navbar-wagon'))
 if (navbar){
   new Typed('#logo-typed-text', {
-    strings: ["B."],
+    strings: ["."],
     typeSpeed: 300,
     loop: true,
   });
