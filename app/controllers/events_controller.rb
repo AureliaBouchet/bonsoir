@@ -17,7 +17,6 @@ class EventsController < ApplicationController
       @events = CheckAvailabilityHoursJob.perform_now(events)
     end
 
-
    @generated_coord = []
 
     @markers = @events.map do |event|
@@ -63,7 +62,6 @@ class EventsController < ApplicationController
       },
       title: "Vous êtes ici",
     }
-
   end
 end
 

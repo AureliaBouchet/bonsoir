@@ -25,7 +25,7 @@ class CheckAvailabilityHoursJob < ApplicationJob
           lien = doc_day.search('a')
           heure_string = lien.text.strip
           # heure_time = Time.valueOf(heure_string)
-          puts heure_string
+          # puts heure_string
           # puts heure_time
           #event.update(time: heure_string)
 
