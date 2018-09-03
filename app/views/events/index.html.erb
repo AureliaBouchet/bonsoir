@@ -54,49 +54,53 @@
     <div role="tabpanel" class="tab-pane active" id="list">
    <!--  <div class="container"> -->
         <!--   <div class="row"> -->
-      <div class="card-container">
-          <% @events.each do |event| %>
-            <!-- <div class="col-xs-12 col-sm-6 col-md-4"> -->
-            <div class="card-border-white">
-            <!-- Card de face -->
-              <div class="card card-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
-            <!-- Card retournée -->
-                <div class="card-hover">
-                  <div class="event-details">
-                      <h3><%=event.title%></h3>
-                      <p><%=event.description%></p>
-                      <!--  -->
-                      <p> <%=event.price%></p>
+
+        <div class="card-container">
+
+      <div class="slick-caroussel">
+            <% @events.each do |event| %>
+              <!-- <div class="col-xs-12 col-sm-6 col-md-4"> -->
+              <div class="card-border-white">
+              <!-- Card de face -->
+                <div class="card card-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
+              <!-- Card retournée -->
+                  <div class="card-hover">
+                    <div class="event-details">
+                     <h3><%=event.title%></h3>
+                        <p><%=event.description%></p>
+                        <!--  -->
+                        <p> <%=event.price%></p>
+                    </div>
+
                   </div>
+                    <!-- Card description -->
+                      <!--     <p> <%=event.price%></p> -->
+                </div>
+                <div class="card-description">
+
+
+                  <h2><%=event.address%></h2>
+                </div>
+                  <div class="circle-white">
+                    <%=event.time %>
+                  </div>
+                <div class="links">
+                  <ul class="list-inline">
+                    <li><i class="fas fa-map-marker btn-circle"></i></li>
+                    <li><i class="fas fa-share btn-circle"></i></li>
+                  </ul>
+                </div>
+                <div class="infos">
+                      <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.gsub('h', ':')}" + "#pricePart" %>
+                      <%= link_to "Réserver", url_booking, class: "btn btn-primary", target: '_blank' %>
 
                 </div>
-                  <!-- Card description -->
-                    <!--     <p> <%=event.price%></p> -->
               </div>
-              <div class="card-description">
+                 <!--  </div> -->
+            <% end %>
 
-                <h2><%=event.address%></h2>
-              </div>
-                <div class="circle-white">
-                  <p>  <%=event.time %></p>
-                </div>
-              <div class="links">
-                <ul class="list-inline">
-                  <li><i class="fas fa-map-marker btn-circle"></i></li>
-                  <li><i class="fas fa-share btn-circle"></i></li>
-                </ul>
-              </div>
-              <div class="infos">
-                    <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.gsub('h', ':')}" + "#pricePart" %>
-                    <%= link_to "Réserver", url_booking, class: "btn btn-primary", target: '_blank' %>
-
-              </div>
-            </div>
-               <!--  </div> -->
-          <% end %>
-
-        </div>
-
+  </div>
+          </div>
          <!--  </div> -->
     </div>
         <!-- </div> tab container-->
