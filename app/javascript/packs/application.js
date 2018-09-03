@@ -18,10 +18,12 @@ import 'slick-carousel/slick/slick-theme.css';
 
 $('.slick-caroussel').slick({
  slidesToShow: 3,
+ // slidesToScroll: 2,
+ focusOnSelect: true,
  dots: true,
  centerMode: true,
  speed:500,
- // centerPadding: '40px',
+centerPadding: '-200px',
  // arrows: true,
  // infinite:true,
 
@@ -30,8 +32,8 @@ $('.slick-caroussel').slick({
       breakpoint: 768,
       settings: {
         arrows: false,
-        // centerMode: true,
-        // centerPadding: '40px',
+        centerMode: true,
+        centerPadding: '0px',
         slidesToShow: 1
       }
     },
@@ -39,8 +41,8 @@ $('.slick-caroussel').slick({
       breakpoint: 480,
       settings: {
         arrows: false,
-        //centerMode: true,
-        // centerPadding: '40px',
+        centerMode: true,
+        centerPadding: '0px',
         slidesToShow: 1
       }
     }
