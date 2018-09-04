@@ -47,9 +47,10 @@
               <!-- Card retournée -->
                   <div class="card-hover">
                     <div class="event-details">
-                     <h3><%=event.title%></h3>
-                        <p><%=event.description%></p>
-                        <p> <%=event.price%></p>
+                      <h3><%=event.title%></h3>
+                      <p><%=event.description.split("De ")[0]%></p>
+                      <p class="small-p">De <%=event.description.split("De")[1]%></p>
+                      <p class="small-p"> <%=event.price%></p>
                     </div>
 
                   </div>
@@ -58,7 +59,8 @@
                 <div class="topcard">
                       <strong><%=event.time.slice(0..4) %></strong>
                   <div class="topcard-address">
-                  <%=event.address%>
+                  <p><%=event.venue%>
+                   <em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
 
                   </div>
                   </div>
