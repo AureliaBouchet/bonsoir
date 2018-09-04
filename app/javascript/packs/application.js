@@ -54,3 +54,7 @@ $('.slick-caroussel').slick({
     }
   ]
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

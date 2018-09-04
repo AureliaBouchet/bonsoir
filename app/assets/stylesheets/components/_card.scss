@@ -5,7 +5,8 @@
   align-items:center;
 }
 
-.card-border-white{
+
+.card-border-white{ // CARD
   background-color:white;
   // padding:10px;
   margin:30px 0;
@@ -17,6 +18,7 @@
   box-shadow: 1px 1px 5px rgba(0,0,0,0.22);
 
 }
+
 
 .slick-slide {
   // border-style: solid;
@@ -151,18 +153,12 @@ padding: 0px 0px !important;
   background-position: top;
   box-shadow: 0px 0px 5px rgba(255,255,255,0.22);
   position:absolute;
-
   background-repeat: no-repeat;
   top:50px;
   left: 4%;
 }
 
 .card-hover {
-  // position: absolute;
-  // top: 0;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
   background: white;
   opacity: 0;
   z-index:10;
@@ -179,70 +175,22 @@ padding: 0px 0px !important;
 
   font-size:15px;
 }
-.card:hover .circle-white{
-  // background-color: $light-gray;
-}
-.card:hover .card-description{
-  // background-color: $light-gray;
-  // box-shadow: 0px 0px 5px rgba(23, 29, 38,0.22);
-}
-.circle-white{
-  // z-index:20;
-  // border-radius:50%;
-  // box-shadow: 0px 0px 5px rgba(23, 29, 38,0.22);
-  // background-color:rgba(255, 255, 255, 1);
-  color: rgb(23, 29, 38);
-  // position:absolute;
-  // top:15px;
-  // left:10px;
-  font-size:16px;
-  // font-weight: bold;
-  // height:60px;
-  // width:60px;
-  // text-align:left;
-}
+
+
 .small-p{
     font-size: 12px;
     font-style: normal;
   }
 
-.event-details {
+.event-details { // COntenu de la carte retournée
   padding: 10px;
   h3 {
     font-size: 18px;
     margin: 15px 0;
     text-align: center;
-    color: #822020;
+    color: #82040E;
   }
 }
-
-// .card-description{
-//   z-index:20;
-//   border-radius:2px;
-//   color: rgb(23, 29, 38);
-//   height:40px;
-//   width: 280px;
-//   vertical-align: center;
-//   text-align:right;
-
-//   h2 {
-//     font-size:16px;
-//     padding:0;
-//     margin:0;
-//     font-weight: bold;
-//   }
-//   h3 {
-//     font-size:14px;
-//     padding:0;
-//     margin:0;
-//     font-weight: bold;
-//   }
-//   p {
-//     font-size: 12px;
-//     padding:0;
-//     margin:0;
-//   }
-// }
 
 .topcard-address{
   width: 250px;
@@ -288,7 +236,7 @@ padding: 0px 0px !important;
 
 a {
   font-family: $body-font;
-  font-style: italic;
+  // font-style: italic;
   font-weight: bold;
   font-size: 14px;
   color: black;
@@ -357,3 +305,157 @@ a:hover {
   margin-left: -20px;
 }
 
+.card-show-container{
+  display: flex;
+  flex-wrap: no-wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+//__________________ CAROUSSEL_________________________________
+.slick-slide {
+  // border-style: solid;
+  // border-color: #040711;
+  // border-width: 5px;
+  opacity: 0.3;
+
+}
+
+.slick-slide.slick-active {
+  display: flex;
+
+  justify-content: center;
+  align-items:center;
+}
+
+// .slick-slide.slick-cloned[data-slick-index='-1']{
+//     display: flex;
+//    justify-content: flex-end;
+//  }
+
+#slick-slide01, #slick-slide02, #slick-slide03, #slick-slide04,#slick-slide05{
+  display: flex;
+  justify-content: center;
+
+}
+
+// .slick-slide.slick-cloned{
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
+.slick-slide.slick-current.slick-active.slick-center{
+  transform: scale(1.08);
+  opacity: 1;
+  display: flex;
+
+  justify-content: center !important;
+  align-items:center;
+   // width: 400px !important;
+}
+.slick-dots {
+  padding-bottom: 10px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  }
+
+.slick-caroussel{
+  width: 1100px;
+  padding-bottom: 10px;
+}
+
+
+@media all and (max-width: 768px)
+{
+  .slick-caroussel{
+    width: 350px;
+}
+}
+
+
+.fas.fa-angle-left {
+    position: absolute;
+    left: -70px;
+    top: 40%;
+    font-size: 80px;
+}
+
+.fas.fa-angle-right {
+    position: absolute;
+    right: -70px;
+    top: 40%;
+    font-size: 80px;
+}
+
+
+
+
+
+
+// ______________________________________ OLD ____________________________
+
+// .card-description{
+//   z-index:20;
+//   border-radius:2px;
+//   color: rgb(23, 29, 38);
+//   height:40px;
+//   width: 280px;
+//   vertical-align: center;
+//   text-align:right;
+
+//   h2 {
+//     font-size:16px;
+//     padding:0;
+//     margin:0;
+//     font-weight: bold;
+//   }
+//   h3 {
+//     font-size:14px;
+//     padding:0;
+//     margin:0;
+//     font-weight: bold;
+//   }
+//   p {
+//     font-size: 12px;
+//     padding:0;
+//     margin:0;
+//   }
+// }
+
+// .slick-prev:before, .slick-next:before { font-family: "slick"; font-size: 300px; line-height: 1; color: #040711; opacity: 0.75; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+// .slick-prev:before {
+//   content: "‹"; }
+// // [dir="rtl"] .slick-prev { right: -20px; }
+// .slick-next:before { content: "›"; }
+
+
+
+// .slick-prev:before {
+//   color: #040711;
+
+// }
+// .slick-next:before {
+//   color: #040711;
+// }
+
+
+// .fas.fa-angle-left, .fas.fa-angle-right {
+//     font-size: 0;
+//     line-height: 0;
+//     position: absolute;
+//     top: 50%;
+//     display: block;
+//     width: 20px;
+//     height: 20px;
+//     padding: 0;
+//     -webkit-transform: translate(0, -50%);
+//     transform: translate(0, -50%);
+//     cursor: pointer;
+//     color: transparent;
+//     border: none;
+//     outline: none;
+//     background: transparent;
+// }

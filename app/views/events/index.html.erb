@@ -69,6 +69,16 @@
                       <p class="small-p">De <%=event.description.split("De")[1]%></p>
                       <p class="small-p"> <%=event.price%></p>
                     </div>
+
+                    <div class="copy-link">
+                       <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0;" ></input>
+                       <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" data-placement="top" title="click to copy"></i>
+                    </div>
+
+
+                  </div>
+                  </div>
+
                   </div>
                     <!-- Card map -->
                   <div class="card-map">
@@ -82,23 +92,25 @@
 
                 </div>
 
-                <div class="topcard">
-                      <strong><%=event.time.slice(0..4) %></strong>
-                  <div class="topcard-address">
-                  <p><%=event.venue%>
-                   <em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
 
+                <div class="topcard">
+                  <strong><%=event.time.slice(0..4) %></strong>
+                  <div class="topcard-address">
+                    <p><%=event.venue%>
+                    <em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
                   </div>
-                  </div>
+                </div>
 
 
                 <div class="links">
                   <ul class="list-inline">
+
                     <li>
                       <i class="fas fa-map-marker btn-circle map-show" id="map-sticker_<%=event.id%>" data-event-id="<%=event.id%>"></i>
                       <i class="fas fa-map-marker btn-circle map-hidden hidden" id="map-hidden-<%=event.id%>"></i>
                     </li>
-                    <li><i class="fas fa-share btn-circle"></i></li>
+                    
+
                   </ul>
                 </div>
                 <div class="infos">
@@ -107,6 +119,7 @@
                 </div>
 
               </div>
+
             <% end %>
           </div>
         </div>
@@ -132,7 +145,14 @@
 <% end %>
 
 
-
-
+<script>
+  function copyText(id){
+    console.log(id)
+    const input = document.getElementById(id);
+    console.log(input);
+    input.select()
+    document.execCommand("copy");
+  }
+</script>
 
 
