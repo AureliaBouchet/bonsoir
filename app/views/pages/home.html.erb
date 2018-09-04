@@ -1,4 +1,4 @@
-<div class="banner" >
+<div class="banner" id="home-top" >
   <div class="banner-title">
     <p>
       <span id="logo-typed-text" style= "color: white; font-size: 50px; font-family: 'Poiret One';"></span>
@@ -9,7 +9,10 @@
   <div class="form-home-section">
     <%= render 'shared/search' %>
   </div>
-  <div class="banner-arrow">
+
+  <div class="banner-arrow-down">
+  <p style= "margin:0px;">Pourquoi nous ?</p>
+
     <%= link_to root_path(anchor: 'information'), class: "link" do %>
       <i class="fas fa-caret-down"> </i>
     <%end%>
@@ -17,19 +20,48 @@
 </div>
 
 
-<div class="information-section" id="information">
-<div id="information" class="information-content">
-  <h2 class="text-center">Pourquoi Bonsoir.?</h2>
-  <div class="quality">
-    Qualité : une sélection réduite de pièces de théâtre afin de vous aider à faire votre choix
+<div class="information-container" id="information">
+
+  <div class="banner-arrow-up">
+    <%= link_to root_path(anchor: 'home-top'), class: "link" do %>
+    <i class="fas fa-caret-up" style="color: black;"> </i>
+  <%end%>
+    <p style= "margin:0px; color: black;">Accueil</p>
   </div>
 
-  <div class="availability">
-    Disponibilité :temps réel
+  <!--     <h1>Pourquoi nous ?</h1> -->
+
+  <div class="information-section">
+    <div class="information-content">
+      <div class="information-icon">
+        <i class="fas fa-thumbs-up"></i></div>
+      <h4>Qualité</h4>
+      <p>Une sélection des pièces les mieux notées pour faciliter votre choix</p>
+    </div>
+
+    <div class="information-content">
+      <div class="information-icon">
+        <i class="fas fa-calendar-check"></i></div>
+      <h4>Disponibilité</h4>
+      <p>Une recherche en temps réel pour éliminer les spectacles déjà complets</p>
+    </div>
+
+    <div class="information-content">
+      <div class="information-icon">
+        <i class="fas fa-map-marker-alt"></i></div>
+      <h4>Proximité</h4>
+      <p>Une option de géolocalisation pour trouver les théâtres proches de vous</p>
+    </div>
   </div>
 
-  <div class="proximty">
-    Proximité : géolocalisation
+  <br/>
+
+  <div class="signature">
+    <p style= "color: #82040E; font-size: 24px; font-family: 'Poiret One';">Bonsoir.</p>
   </div>
+
 </div>
-</div>
+
+
+
+

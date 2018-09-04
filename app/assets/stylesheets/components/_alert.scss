@@ -8,11 +8,32 @@
   color: white;
   // padding: 15px;
   margin-bottom: 5px;
+  font-size: 14px;
+  color: #040711;
+  // width: 50%;
+  // position: absolute;
+  left:25%;
+  z-index:20;
+  padding:10px;
 }
 .alert-info {
-  background: #040711;
+  margin-top: 20px;
+  background: white;
+  border: 1px solid #040711;
 }
 .alert-warning {
-  background: #040711;
-  opacity: 0.5;
+ margin-top: 20px;
+  background: white;
+  border: 1px solid #040711;
 }
+
+.close span{
+    position: absolute;
+    top: -2px;
+    right: 30px;
+
+}
+
+// .alert.alert-info.alert-dismissible{
+//   position:relative;
+// }

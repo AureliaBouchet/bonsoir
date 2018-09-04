@@ -17,33 +17,39 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 $('.slick-caroussel').slick({
- slidesToShow: 3,
+ slidesToShow: 1,
  // slidesToScroll: 2,
  focusOnSelect: true,
  dots: true,
  centerMode: true,
  speed:500,
-centerPadding: '-200px',
- // arrows: true,
- // infinite:true,
+ centerPadding: '300px',
+ prevArrow: '<i class="fas fa-angle-left"></i>',
+ nextArrow: '<i class="fas fa-angle-right"></i>',
+ arrows: true,
+ infinite:true,
 
  responsive: [
     {
       breakpoint: 768,
       settings: {
         arrows: false,
-        centerMode: true,
-        centerPadding: '0px',
-        slidesToShow: 1
+        // // centerMode: true,
+        // // centerPadding: '300px',
+        slidesToShow: 1,
+        // height: 600
+
       }
     },
     {
       breakpoint: 480,
       settings: {
         arrows: false,
-        centerMode: true,
-        centerPadding: '0px',
-        slidesToShow: 1
+        // // centerMode: true,
+        // // centerPadding: '300px',
+        slidesToShow: 1,
+        //  height: 600
+
       }
     }
   ]

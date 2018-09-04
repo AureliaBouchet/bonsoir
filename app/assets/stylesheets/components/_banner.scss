@@ -28,12 +28,12 @@ min-height: 100vh;
 
 .banner-title{
   position: absolute;
-  top: 15vh;
+  top: 12vh;
 }
 
 .form-home-section{
   position: absolute;
-  top: 50vh;
+  top: 45vh;
 }
 .search-banner{
   // display:flex;
@@ -58,19 +58,66 @@ min-height: 100vh;
 //   position: relative;
 //   bottom: -100px;
 // }
-.banner-arrow{
- font-size: 50px;
+.banner-arrow-down{
+ // font-size: 50px;
  position: absolute;
- bottom: 5px;
+ bottom: 1%;
  opacity: 0.8;
+ align-items:center;
+
+}
+
+.banner-arrow-up{
+ // font-size: 50px;
+
+ opacity: 0.8;
+ align-items:center;
+
 }
 
 
-.information-section{
-  height: 100vh;
+.information-container{
+  height: 80vh;
+  // display: flex;
+  text-align: center;
+  // max-margin:50px;
+  background-color: white;
+}
+
+
+.information-section {
+  margin-top: 10vh;
+  padding-bottom: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px;
-  max-margin: 50px;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.information-content {
+  background-color: $light-gray;
+  height: 250px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 22px -1px #dcdcdc;
+  border-radius: 5px;
+  padding: 16px 16px;
+  margin: 3vh 1vw;
+  border-left: 4px solid #82040E;
+  border-right: 4px solid #82040E;
+
+
+}
+
+.information-icon {
+  width: 18vw;
+  margin-bottom: 15px;
+  vertical-align: middle;
+  border-style: none;
+  font-size: 36px;
 }
