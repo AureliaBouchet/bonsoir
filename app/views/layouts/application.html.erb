@@ -17,6 +17,7 @@
 <div class="banner-container">
     <% unless action_name == "home" %>
       <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
     <% end %>
     <%= yield %>
     <div class="empty">
