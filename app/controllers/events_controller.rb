@@ -3,6 +3,8 @@ class EventsController < ApplicationController
 
     params[:date] = Date.today.strftime('%Y-%m-%d') unless params[:date].present?
     params[:location] = "Paris, France" if params[:location] == "Indiquez un lieu"
+    # params[:distance].downcase.gsub("km", '') if params[:distance].include?("km")
+
 
     if params[:date].present? && params[:location].present?
       events = Event.where(date: params[:date]).near(params[:location], params[:distance].blank? ? 10 : params[:distance]).select {|event| event.rating}.sort_by(&:rating).reverse
