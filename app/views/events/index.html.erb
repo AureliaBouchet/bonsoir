@@ -6,19 +6,19 @@
 </div>
 
 
-<% if @events.size == 0 %>
+<%if @events.size == 0 %>
   <p class="msg-zero-result">Dommage! <br><br>Toutes les pièces de théatre autour de vous affichent complet<br><br>
   Elargissez votre périmètre géographique ou choisissez une autre soirée</p>
 
 <% else %>
-  <% if @events.size == 1 %>
-    <p class="msg-result">Il ne reste plus qu'une pièce de théatre disponible autour de vous ce soir. Dépêchez-vous ou élargissez vos critères de recherche! </p>
-  <% elsif @events.size == 5 %>
-    <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p>
-  <% else %>
-     <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p>
-      <p class="msg-result">Pour afficher plus de résultats, élargissez vos critères de recherche.</p>
-  <% end %>
+  <%# if @events.size == 1 %>
+    <!-- <p class="msg-result">Il ne reste plus qu'une pièce de théatre disponible autour de vous ce soir. Dépêchez-vous ou élargissez vos critères de recherche! </p> -->
+  <%# elsif @events.size == 5 %>
+    <!-- <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p> -->
+  <%# else %>
+     <!-- <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p> -->
+      <!-- <p class="msg-result">Pour afficher plus de résultats, élargissez vos critères de recherche.</p> -->
+  <%# end %>
 
 
 
@@ -47,24 +47,21 @@
               <!-- Card retournée -->
                   <div class="card-hover">
                     <div class="event-details">
-                     <h3><%=event.title%></h3>
-                        <p><%=event.description%></p>
-                        <!--  -->
-                        <p> <%=event.price%></p>
+                      <h3><%=event.title%></h3>
+                      <p><%=event.description.split("De ")[0]%></p>
+                      <p class="small-p">De <%=event.description.split("De")[1]%></p>
+                      <p class="small-p"> <%=event.price%></p>
                     </div>
 
                   </div>
-                    <!-- Card description -->
-                      <!--     <p> <%=event.price%></p> -->
+
                 </div>
                 <div class="topcard">
-<!--                   <div class="circle-white"> -->
-                      <strong><%=event.time %></strong>
-                 <!--  </div> -->
-<!--                 <div class="card-description"> -->
+                      <strong><%=event.time.slice(0..4) %></strong>
                   <div class="topcard-address">
-                  <%=event.address%>
-<!--                 </div> -->
+                  <p><%=event.venue%>
+                   <em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
+
                   </div>
                   </div>
 
@@ -75,14 +72,11 @@
                   </ul>
                 </div>
                 <div class="infos">
-                      <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.gsub('h', ':')}" + "#pricePart" %>
+                      <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.slice(0..4).gsub('h', ':')}" + "#pricePart" %>
                       <%= link_to "Réserver", url_booking, class: "btn btn-primary", target: '_blank' %>
-
                 </div>
               </div>
-                 <!--  fin de la div -->
             <% end %>
-
           </div>
         </div>
 
