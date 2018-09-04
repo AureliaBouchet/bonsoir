@@ -27,25 +27,29 @@ $('.slick-caroussel').slick({
  prevArrow: '<i class="fas fa-angle-left"></i>',
  nextArrow: '<i class="fas fa-angle-right"></i>',
  arrows: true,
- // infinite:true,
+ infinite:true,
 
  responsive: [
     {
       breakpoint: 768,
       settings: {
         arrows: false,
-        centerMode: true,
-        centerPadding: '0px',
-        slidesToShow: 1
+        // // centerMode: true,
+        // // centerPadding: '300px',
+        slidesToShow: 1,
+        // height: 600
+
       }
     },
     {
       breakpoint: 480,
       settings: {
         arrows: false,
-        centerMode: true,
-        centerPadding: '0px',
-        slidesToShow: 1
+        // // centerMode: true,
+        // // centerPadding: '300px',
+        slidesToShow: 1,
+        //  height: 600
+
       }
     }
   ]
