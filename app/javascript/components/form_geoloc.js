@@ -1,6 +1,6 @@
 function formGeoloc() {
-  console.log('hello')
   const form = document.querySelector('.new-search-bar');
+  // const banner = document.getElementById('search-box-home');
   console.log(form)
   if (form) {
     form.addEventListener('submit', (event) => {
@@ -9,9 +9,8 @@ function formGeoloc() {
       console.log(geolocation_address)
       if(geolocation_address.value === "") {
         geolocation_address.value = geolocation_address.placeholder
-        console.log(geolocation_address.value)
       }
-      form.submit();
+       form.submit();
     });
   }
 }
