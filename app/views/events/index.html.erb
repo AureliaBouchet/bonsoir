@@ -49,16 +49,7 @@
             <% @events.each do |event| %>
               <!-- <div class="col-xs-12 col-sm-6 col-md-4"> -->
               <div class="card-border-white">
-              <div class="topcard">
-<!--                   <div class="circle-white"> -->
-                    <strong><%=event.time %></strong>
-               <!--  </div> -->
-<!--                 <div class="card-description"> -->
-                <div class="topcard-address">
-                <%=event.address%>
-<!--                 </div> -->
-                </div>
-                </div>
+
               <!-- Card de face -->
                 <div class="card card-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
               <!-- Card retournée -->
@@ -70,15 +61,6 @@
                       <p class="small-p"> <%=event.price%></p>
                     </div>
 
-                    <div class="copy-link">
-                       <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0;" ></input>
-                       <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" data-placement="top" title="click to copy"></i>
-                    </div>
-
-
-                  <!-- </div> -->
-                  </div>
-
                   </div>
                     <!-- Card map -->
                   <div class="card-map">
@@ -88,7 +70,8 @@
                       id="map-sticker_<%=event.id%>"
                       data-markers="<%= @markers.to_json %>">
                     </div>
-                  </div>
+
+                </div>
 
                 </div>
 
@@ -108,6 +91,11 @@
                     <li>
                       <i class="fas fa-map-marker btn-circle map-show" id="map-sticker_<%=event.id%>" data-event-id="<%=event.id%>"></i>
                       <i class="fas fa-map-marker btn-circle map-hidden hidden" id="map-hidden-<%=event.id%>"></i>
+                    </li>
+
+                    <li class="copy-link">
+                       <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0; width: 2px;" ></input>
+                       <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" data-placement="top" title="click to copy"></i>
                     </li>
 
 
