@@ -15,7 +15,7 @@
   </head>
   <body>
 <div class="banner-container">
-    <% unless action_name == "home" %>
+    <% unless action_name == "home" || action_name == "show"%>
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
     <% end %>
