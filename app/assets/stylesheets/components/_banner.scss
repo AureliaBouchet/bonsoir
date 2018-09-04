@@ -1,5 +1,5 @@
 .banner-container{
-// position: relative;
+position: relative;
 min-height: 100vh;
 }
 
@@ -63,14 +63,14 @@ min-height: 100vh;
  position: absolute;
  bottom: 5px;
  opacity: 0.8;
-
 }
+
 
 .information-section{
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin:20px;
-  max-margin:50px;
+  margin: 20px;
+  max-margin: 50px;
 }
