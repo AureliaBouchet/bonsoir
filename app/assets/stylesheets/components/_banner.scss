@@ -81,7 +81,7 @@ min-height: 100vh;
   // display: flex;
   text-align: center;
   // max-margin:50px;
-  background-color: $light-gray;
+  background-color: white;
 }
 
 
@@ -92,11 +92,11 @@ min-height: 100vh;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: $light-gray;
+  background-color: white;
 }
 
 .information-content {
-  background-color: white;
+  background-color: $light-gray;
   height: 250px;
   width: 300px;
   display: flex;
@@ -109,6 +109,8 @@ min-height: 100vh;
   padding: 16px 16px;
   margin: 3vh 1vw;
   border-left: 4px solid #82040E;
+  border-right: 4px solid #82040E;
+
 
 }
 
