@@ -3,20 +3,20 @@
     <%= form_tag events_path, class: "new-search-bar", method: :get do %>
 
       <div class="row">
-        <div class="form-group col-xs-8 col-xs-offset-2 col-md-offset-0  col-md-12">
+        <div class="form-group col-xs-10 col-xs-offset-1 col-md-offset-0  col-md-12">
           <%= text_field_tag :date, params[:date], placeholder: "Ce soir", class: "form-control" %>
         </div>
       </div>
 
       <div class="row">
-        <div class="form-group col-md-9">
+        <div class="form-group col-xs-10 col-xs-offset-1 col-md-9 col-md-offset-0">
 
-          <%= text_field_tag :location, params[:location], class: "form-control", style: "color: white; background-color: transparent; border-bottom-color: white;" %>
+          <%= text_field_tag :location, params[:location], class: "form-control", style: "color: white; background-color: transparent; border-bottom-color: white; font-size: 16px;" %>
         </div>
 
-        <div class="form-group col-xs-6 col-xs-offset-3 col-md-offset-0 col-md-3 ">
+        <div class="form-group col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-3 ">
 
-            <%= text_field_tag :distance, params[:distance], placeholder: "10 (km)", class: "form-control", style: "color: white; background-color: transparent; border-bottom-color: white;" %>
+            <%= text_field_tag :distance, params[:distance], placeholder: "10 km", class: "form-control", style: "color: white; background-color: transparent; border-bottom-color: white; font-size: 16px;" %>
         </div>
       </div>
 
