@@ -52,37 +52,33 @@
                       <p class="small-p">De <%=event.description.split("De")[1]%></p>
                       <p class="small-p"> <%=event.price%></p>
                     </div>
-
-
-                  </div>
-                    <div class="links">
-                      <ul class="list-inline">
-                        <li><i class="fas fa-map-marker btn-circle"></i></li>
-
-                        <li>
-                          <!-- <i class="fas fa-link"></i> -->
-                          <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0;" ></input>
-                           <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" data-placement="top" title="click to copy"></i>
-                          </li>
-
-                      </ul>
+                    <div class="copy-link">
+                       <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0;" ></input>
+                       <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" data-placement="top" title="click to copy"></i>
                     </div>
 
-                </div>
+
+                  </div>
+                  </div>
                 <div class="topcard">
-                      <strong><%=event.time.slice(0..4) %></strong>
+                  <strong><%=event.time.slice(0..4) %></strong>
                   <div class="topcard-address">
-                  <p><%=event.venue%>
-                   <em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
-
+                    <p><%=event.venue%>
+                    <em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
                   </div>
-                  </div>
+                </div>
 
+                <div class="links">
+                  <ul class="list-inline">
+                    <li><i class="fas fa-map-marker btn-circle"></i></li>
+                  </ul>
+                </div>
                 <div class="infos">
                       <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.slice(0..4).gsub('h', ':')}" + "#pricePart" %>
                       <%= link_to "Réserver", url_booking, class: "btn btn-primary", target: '_blank' %>
                 </div>
               </div>
+
             <% end %>
           </div>
         </div>
