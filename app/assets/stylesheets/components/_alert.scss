@@ -19,12 +19,16 @@
 .alert-info {
   margin-top: 20px;
   background: white;
-  border: 1px solid #040711;
+  border-top: 1px solid #040711;
+  border-bottom: 1px solid #040711;
+  border-radius: 0px;
 }
 .alert-warning {
  margin-top: 20px;
   background: white;
-  border: 1px solid #040711;
+  border-top: 1px solid #040711;
+  border-bottom: 1px solid #040711;
+  border-radius: 0px;
 }
 
 .close span{
