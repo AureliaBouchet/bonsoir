@@ -49,22 +49,17 @@
                     <div class="event-details">
                      <h3><%=event.title%></h3>
                         <p><%=event.description%></p>
-                        <!--  -->
                         <p> <%=event.price%></p>
                     </div>
 
                   </div>
-                    <!-- Card description -->
-                      <!--     <p> <%=event.price%></p> -->
+
                 </div>
                 <div class="topcard">
-<!--                   <div class="circle-white"> -->
-                      <strong><%=event.time %></strong>
-                 <!--  </div> -->
-<!--                 <div class="card-description"> -->
+                      <strong><%=event.time.slice(0..4) %></strong>
                   <div class="topcard-address">
                   <%=event.address%>
-<!--                 </div> -->
+
                   </div>
                   </div>
 
@@ -75,14 +70,11 @@
                   </ul>
                 </div>
                 <div class="infos">
-                      <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.gsub('h', ':')}" + "#pricePart" %>
+                      <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.slice(0..4).gsub('h', ':')}" + "#pricePart" %>
                       <%= link_to "Réserver", url_booking, class: "btn btn-primary", target: '_blank' %>
-
                 </div>
               </div>
-                 <!--  fin de la div -->
             <% end %>
-
           </div>
         </div>
 
