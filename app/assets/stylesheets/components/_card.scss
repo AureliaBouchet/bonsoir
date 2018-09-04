@@ -32,26 +32,41 @@
   align-items:center;
 }
 
+// .slick-slide.slick-cloned[data-slick-index='-1']{
+//     display: flex;
+//    justify-content: flex-end;
+//  }
+
+#slick-slide01, #slick-slide02, #slick-slide03, #slick-slide04,#slick-slide05{
+  display: flex;
+  justify-content: center;
+
+}
+
+// .slick-slide.slick-cloned{
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
 .slick-slide.slick-current.slick-active.slick-center{
   transform: scale(1.08);
   opacity: 1;
   display: flex;
 
-  justify-content: center;
+  justify-content: center !important;
   align-items:center;
    // width: 400px !important;
 }
-
 .slick-dots {
   padding-bottom: 10px;
 }
 
 .slick-dots li button:before {
-  font-size: 15px;
+  font-size: 10px;
   }
 
 .slick-caroussel{
-  width: 1180px;
+  width: 1100px;
   padding-bottom: 10px;
 }
 
@@ -63,11 +78,12 @@
 }
 }
 
-.slick-prev:before, .slick-next:before { font-family: "slick"; font-size: 100px; line-height: 1; color: #040711; opacity: 0.75; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-.slick-prev:before {
-  content: "‹"; }
-// [dir="rtl"] .slick-prev { right: -20px; }
-.slick-next:before { content: "›"; }
+// .slick-prev:before, .slick-next:before { font-family: "slick"; font-size: 300px; line-height: 1; color: #040711; opacity: 0.75; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+// .slick-prev:before {
+//   content: "‹"; }
+// // [dir="rtl"] .slick-prev { right: -20px; }
+// .slick-next:before { content: "›"; }
+
 
 
 // .slick-prev:before {
@@ -77,6 +93,39 @@
 // .slick-next:before {
 //   color: #040711;
 // }
+
+
+// .fas.fa-angle-left, .fas.fa-angle-right {
+//     font-size: 0;
+//     line-height: 0;
+//     position: absolute;
+//     top: 50%;
+//     display: block;
+//     width: 20px;
+//     height: 20px;
+//     padding: 0;
+//     -webkit-transform: translate(0, -50%);
+//     transform: translate(0, -50%);
+//     cursor: pointer;
+//     color: transparent;
+//     border: none;
+//     outline: none;
+//     background: transparent;
+// }
+
+.fas.fa-angle-left {
+    position: absolute;
+    left: -70px;
+    top: 40%;
+    font-size: 80px;
+}
+
+.fas.fa-angle-right {
+    position: absolute;
+    right: -70px;
+    top: 40%;
+    font-size: 80px;
+}
 
 .card {
   border-radius:2px;

@@ -11,14 +11,14 @@
   Elargissez votre périmètre géographique ou choisissez une autre soirée</p>
 
 <% else %>
-  <% if @events.size == 1 %>
-    <p class="msg-result">Il ne reste plus qu'une pièce de théatre disponible autour de vous ce soir. Dépêchez-vous ou élargissez vos critères de recherche! </p>
-  <% elsif @events.size == 5 %>
-    <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p>
-  <% else %>
-     <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p>
-      <p class="msg-result">Pour afficher plus de résultats, élargissez vos critères de recherche.</p>
-  <% end %>
+  <%# if @events.size == 1 %>
+    <!-- <p class="msg-result">Il ne reste plus qu'une pièce de théatre disponible autour de vous ce soir. Dépêchez-vous ou élargissez vos critères de recherche! </p> -->
+  <%# elsif @events.size == 5 %>
+    <!-- <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p> -->
+  <%# else %>
+     <!-- <p class="msg-result">Voici les <%= @events.size %> pièces de théatre sélectionnées autour de vous. Bonsoir.</p> -->
+      <!-- <p class="msg-result">Pour afficher plus de résultats, élargissez vos critères de recherche.</p> -->
+  <%# end %>
 
 
 
