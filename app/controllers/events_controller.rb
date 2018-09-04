@@ -54,6 +54,7 @@ class EventsController < ApplicationController
       }
 
       {
+        id: event.id.to_s,
         lat: event.latitude,
         lng: event.longitude,
         icon: {

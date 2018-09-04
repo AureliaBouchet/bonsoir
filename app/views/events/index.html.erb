@@ -49,6 +49,16 @@
             <% @events.each do |event| %>
               <!-- <div class="col-xs-12 col-sm-6 col-md-4"> -->
               <div class="card-border-white">
+              <div class="topcard">
+<!--                   <div class="circle-white"> -->
+                    <strong><%=event.time %></strong>
+               <!--  </div> -->
+<!--                 <div class="card-description"> -->
+                <div class="topcard-address">
+                <%=event.address%>
+<!--                 </div> -->
+                </div>
+                </div>
               <!-- Card de face -->
                 <div class="card card-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path event.photo, crop: :fill %>);">
               <!-- Card retournée -->
@@ -59,10 +69,19 @@
                       <p class="small-p">De <%=event.description.split("De")[1]%></p>
                       <p class="small-p"> <%=event.price%></p>
                     </div>
-
+                  </div>
+                    <!-- Card map -->
+                  <div class="card-map">
+                    <div
+                      style="height:400px"
+                      for="map-sticker_<%=event.id%>"
+                      id="map-sticker_<%=event.id%>"
+                      data-markers="<%= @markers.to_json %>">
+                    </div>
                   </div>
 
                 </div>
+
                 <div class="topcard">
                       <strong><%=event.time.slice(0..4) %></strong>
                   <div class="topcard-address">
@@ -72,9 +91,13 @@
                   </div>
                   </div>
 
+
                 <div class="links">
                   <ul class="list-inline">
-                    <li><i class="fas fa-map-marker btn-circle"></i></li>
+                    <li>
+                      <i class="fas fa-map-marker btn-circle map-show" id="map-sticker_<%=event.id%>" data-event-id="<%=event.id%>"></i>
+                      <i class="fas fa-map-marker btn-circle map-hidden hidden" id="map-hidden-<%=event.id%>"></i>
+                    </li>
                     <li><i class="fas fa-share btn-circle"></i></li>
                   </ul>
                 </div>
@@ -82,6 +105,7 @@
                       <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.slice(0..4).gsub('h', ':')}" + "#pricePart" %>
                       <%= link_to "Réserver", url_booking, class: "btn btn-primary", target: '_blank' %>
                 </div>
+
               </div>
             <% end %>
           </div>
