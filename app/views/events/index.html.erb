@@ -132,6 +132,7 @@
         </div>
         <!-- PANEL -->
         <div id="panels">
+          <div id="close-panel" class="close-small"><span aria-hidden="true">&times;</span></div>
           <% @events.each do |event| %>
             <div class="event-card hidden" data-panel-id="<%= event.id %>">
               <%= render 'shared/card', event: event %>
