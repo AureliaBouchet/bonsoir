@@ -309,6 +309,7 @@ a:hover {
     font-size: 16px;
 }
 
+
 .duration {
     position: absolute;
     width: 150px;
@@ -323,4 +324,25 @@ a:hover {
     border-radius: 50%;
     padding-top: 13px;
     font-weight: bolder;}
+
+
+.card-show-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.tooltip.top .tooltip-inner {
+  font-size: 14px !important;
+  background-color: white !important;
+  color: black;
+  opacity: 1 !important;
+  border: solid 1px black;
+}
+.tooltip.top .tooltip-arrow {
+  font-size: 14px !important;
+  background-color: white !important;
+
+}
 

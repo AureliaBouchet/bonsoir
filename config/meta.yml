@@ -1,0 +1,5 @@
+meta_product_name: "Bonsoir."
+meta_title: "Bonsoir. - Chaque soir, votre pièce de théatre."
+meta_description: "Chaque jour, notre sélection des 5 meilleures pièces de théatre, disponibles autour de vous."
+meta_image: "bonsoir_home8_meta.jpg"                       # should exist in `app/assets/images/`
+twitter_account: "@JulietteCrouzet"   # required for Twitter Cards
