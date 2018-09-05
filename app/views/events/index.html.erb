@@ -93,14 +93,15 @@
                   <ul class="list-inline">
 
                     <li>
-                      <i class="fas fa-map-marker btn-circle map-show" id="map-sticker_<%=event.id%>" data-event-id="<%=event.id%>" data-toggle="tooltip" data-placement="top" title="Voir sur une carte"></i>
-                      <i class="fas fa-map-marker btn-circle map-hidden hidden" id="map-hidden-<%=event.id%>"></i>
+                      <i class="fas fa-map-marker map-show map-cursor" id="map-sticker_<%=event.id%>" data-event-id="<%=event.id%>" data-toggle="tooltip" data-placement="top" title="S'y rendre"></i>
+                      <i class="fas fa-map-marker map-hidden hidden map-cursor" id="map-hidden-<%=event.id%>"></i>
                     </li>
 
                     <li class="copy-link">
-                       <input id="<%= event.id %>" type="text" class="hidden" data-clipboard="<%= event_url(event) %>" value="<%= event_url(event) %>" style="opacity: 0; width:10px" ></input>
-                       <i onclick="copyText(<%= event.id %>)" id="tooltip" value="test" class="fas fa-link" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Partager le lien" ></i>
-                        <i id="tooltip2" value="test" class="fas fa-link hidden" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Copié !" ></i>
+                       <button class="btn-clip" data-clipboard-text="<%= event_url(event) %>">
+                        <i onclick="changeTootltip(<%= event.id %>)" id="tooltip_<%=event.id%>" value="test" class="fas fa-link tooltip-before-copy" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Partager le lien" ></i>
+                        <i  id="tooltip2_<%=event.id%>" value="test" class="fas fa-link hidden tooltip-after-copy" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Copié !" ></i>
+                       </button>
                     </li>
 
 
@@ -146,22 +147,18 @@
 
 
 
-
 <script>
-  function copyText(id) {
-    console.log(id)
-    const input = document.getElementById(id)
-    url = input.dataset.clipboard;
-    console.log(input.dataset.clipboard);
-    url.text()
-    document.execCommand("copy");
-    const tooltip = document.getElementById("tooltip")
-    const tooltip2 = document.getElementById("tooltip2")
-    tooltip.classList.add('hidden')
-    tooltip2.classList.remove('hidden')
+  function changeTootltip(id) {
+    console.log(`tooltip_${id}`)
+    const tooltip = document.getElementById(`tooltip_${id}`);
+    const tooltip2 = document.getElementById(`tooltip2_${id}`);
+    console.log(tooltip2);
+    tooltip.classList.add('hidden');
+    console.log("1st step");
+    tooltip2.classList.remove('hidden');
+    console.log("2nd step");
   }
+
 </script>
-
-
 
 

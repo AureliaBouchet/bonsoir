@@ -1,4 +1,7 @@
 import "bootstrap";
+import ClipboardJS from "clipboard";
+
+new ClipboardJS('.btn-clip');
 
 import "../components/flatpickr";
 import { loadDynamicLogoText } from '../components/logo';
@@ -61,3 +64,8 @@ $(function () {
 
 import { displayDetails } from '../components/small-event';
 global.displayDetails = displayDetails;
+
+// import { changeTootltip } from  '../components/tooltip';
+// changeTootltip();
+// import { ChangeTooltipWhenLeaving } from  '../components/tooltip';
+// ChangeTooltipWhenLeaving();
