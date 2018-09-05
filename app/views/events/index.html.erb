@@ -26,8 +26,8 @@
   <ul class="nav nav-tabs nav-perso" role="tablist">
 <!-- <div class="traitleft"></div> -->
 
-    <li role="presentation"  class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab"><i class="fas fa-list-ul "> </i> À l'affiche</a></li>
-    <li role="presentation" id="map-xs" ><a href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker "> </i> Sur la carte</a></li>
+    <li role="presentation"  class="active"><a href="#list" aria-controls="list" role="tab" data-toggle="tab"><i class="fas fa-list-ul "> </i> Notre sélection</a></li>
+    <li role="presentation" id="map-xs" ><a href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker "> </i> Vue carte</a></li>
 <!-- <div class="traitright"></div> -->
   </ul>
 <div class="trait">
@@ -133,6 +133,7 @@
         </div>
         <!-- PANEL -->
         <div id="panels">
+          <div id="close-panel" class="close-small"><span aria-hidden="true">&times;</span></div>
           <% @events.each do |event| %>
             <div class="event-card hidden" data-panel-id="<%= event.id %>">
               <%= render 'shared/card', event: event %>

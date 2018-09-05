@@ -4,9 +4,11 @@
     <p >
       <span id="logo-typed-text" style= "color: white; font-size: 100px; font-family: 'Poiret One';"></span>
     </p>
-    <br />
 
-    <p >Chaque soir, votre pièce de théâtre.</p>
+
+    <p class="taglinehome">Chaque soir, notre sélection de 5 pièces de théâtre.
+  </p>
+    <br/>
 
   </div>
   <div class="form-home-section">
@@ -28,9 +30,9 @@
 
   <div class="banner-arrow-up">
     <%= link_to root_path(anchor: 'home-top'), class: "link" do %>
-    <i class="fas fa-caret-up" style="color: black;"> </i>
+    <i class="fas fa-caret-up" style="color: $black;"> </i>
   <%end%>
-    <!-- <p style= "margin:0px; color: black;"></p> -->
+    <!-- <p style= "margin:0px; color: $black;"></p> -->
   </div>
 
   <!--     <h1>Pourquoi nous ?</h1> -->
@@ -41,21 +43,21 @@
       <div class="information-icon">
         <i class="fas fa-thumbs-up"></i></div>
       <h4>Qualité</h4>
-      <p>Une sélection des 5 pièces les mieux notées pour faciliter votre choix</p>
+      <p>Une sélection des 5 pièces les mieux notées pour la semaine à venir</p>
     </div>
 
     <div class="information-content">
       <div class="information-icon">
         <i class="fas fa-calendar-check"></i></div>
       <h4>Disponibilité</h4>
-      <p>Une recherche en temps réel pour éliminer les spectacles déjà complets</p>
+      <p>Une recherche en temps réel limitée aux places disponibles</p>
     </div>
 
     <div class="information-content">
       <div class="information-icon">
         <i class="fas fa-map-marker-alt"></i></div>
       <h4>Proximité</h4>
-      <p>Une option de géolocalisation pour trouver les théâtres proches de vous</p>
+      <p>Un filtre géographique pour trouver les théâtres proches de vous</p>
     </div>
   </div>
 

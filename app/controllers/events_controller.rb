@@ -25,13 +25,11 @@ class EventsController < ApplicationController
   #   flash[:alert] = "Dommage! Toutes les pièces de théatre autour de vous affichent complet. Elargissez votre périmètre géographique ou choisissez une autre soirée"
   # else
     if @events.size == 1
-      flash.now[:alert] = "Seule une pièce de théâtre correspond à votre recherche. Pour afficher plus de résultats, modifiez vos critères !"
+      flash.now[:alert] = "Seule une pièce de théâtre correspond à votre recherche. Pour profiter de notre sélection complète, modifiez vos critères !"
     # elsif @events.size == 0
     #   flash[:alert] = none
-    elsif @events.size == 5
-      flash.now[:alert] = "Découvrez les #{@events.size} pièces de théâtre sélectionnées pour vous."
-    else
-      flash.now[:alert] = "Seules #{@events.size} pièces de théâtre correspondent à votre recherche. Pour afficher plus de résultats, modifiez vos critères !"
+    elsif @events.size < 5
+      flash.now[:alert] = "Seules #{@events.size} pièces de théâtre correspondent à votre recherche. Pour profiter de notre sélection complète, modifiez vos critères !"
     end
 
   end

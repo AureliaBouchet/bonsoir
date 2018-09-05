@@ -62,10 +62,7 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
-import { displayDetails } from '../components/small-event';
+import { displayDetails, hideDetails } from '../components/small-event';
 global.displayDetails = displayDetails;
 
-// import { changeTootltip } from  '../components/tooltip';
-// changeTootltip();
-// import { ChangeTooltipWhenLeaving } from  '../components/tooltip';
-// ChangeTooltipWhenLeaving();
+hideDetails();

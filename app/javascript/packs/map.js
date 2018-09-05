@@ -195,7 +195,7 @@ function doTheMap(e) {
       origin: [markerUser.lat, markerUser.lng],
       destination: [markerId.lat, markerId.lng],
       travelMode: 'walking',
-      strokeColor: '#82040E',
+      strokeColor: '#A20910',
       strokeOpacity: 1,
       strokeWeight: 3,
     });
