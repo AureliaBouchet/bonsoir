@@ -351,3 +351,40 @@ a:hover {
     font-size: 16px;
 }
 
+
+.duration {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    bottom: 335px;
+    right: 163px;
+    background: transparent;
+    border: solid 3px #82040E;
+    padding-right: 2px;
+    padding-left: 2px;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 13px;
+    font-weight: bolder;}
+
+
+.card-show-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.tooltip.top .tooltip-inner {
+  font-size: 14px !important;
+  background-color: white !important;
+  color: black;
+  opacity: 1 !important;
+  border: solid 1px black;
+}
+.tooltip.top .tooltip-arrow {
+  font-size: 14px !important;
+  background-color: white !important;
+
+}
+

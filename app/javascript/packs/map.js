@@ -147,6 +147,8 @@ function doTheMap(e) {
   if (e.target.getAttribute("class") === "fas fa-map-marker btn-circle map-hidden") {
     const maps = document.querySelectorAll('.card-map > div');
     maps.forEach((map) => {map.classList.add('hidden')});
+    const maps2 = document.querySelectorAll('.card-map > i');
+    maps2.forEach((map) => {map.classList.add('hidden')});
     document.querySelectorAll('.map-hidden').forEach(btn => {btn.classList.add('hidden')});
     document.querySelectorAll('.map-show').forEach(btn => {btn.classList.remove('hidden')});
   }
@@ -157,6 +159,8 @@ function doTheMap(e) {
     var div_to_toggle = document.getElementById(id_for);
     div_to_toggle.classList.remove('hidden')
     const id = e.target.dataset.eventId;
+    const durationDiv = document.getElementById(`duration-${id}`);
+    durationDiv.classList.remove('hidden')
     document.getElementById(`map-hidden-${id}`).classList.remove('hidden');
     e.target.classList.add('hidden');
     const mapXxs = new GMaps({ el: `#${id_for}`, lat: 0, lng: 0, disableDefaultUI: true, });
@@ -169,6 +173,14 @@ function doTheMap(e) {
     var markerUser = markersXxs[markersXxs.length - 1];
     mapXxs.addMarkers([markerId, markerUser]);
 
+    const duration = mapXxs.getRoutes({
+      origin: [markerUser.lat, markerUser.lng],
+      destination: [markerId.lat, markerId.lng],
+      callback: function(e){
+        durationDiv.innerText = e[0].legs[0].duration.text;
+      }
+    });
+
     if (markersXxs.length === 0) {
       mapXxs.setZoom(2);
     } else if (markersXxs.length === 1) {
@@ -177,6 +189,15 @@ function doTheMap(e) {
     } else {
       mapXxs.fitLatLngBounds(markersXxs);
     }
+
+    mapXxs.drawRoute({
+      origin: [markerUser.lat, markerUser.lng],
+      destination: [markerId.lat, markerId.lng],
+      travelMode: 'walking',
+      strokeColor: '#82040E',
+      strokeOpacity: 1,
+      strokeWeight: 3,
+    });
 
     const styles = [
         {
