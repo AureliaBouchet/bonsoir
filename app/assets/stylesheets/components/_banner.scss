@@ -12,7 +12,7 @@ min-height: 100vh;
   background-image:
     linear-gradient(rgba(0,0,0,0.5),
     rgba(0,0,0,0.2)),
-    asset-url('bonsoir_home8.jpeg');
+    asset-url('bonsoir_home8_test.jpeg');
   background-size: cover;
   margin: 0;
   display: flex;
@@ -29,7 +29,13 @@ min-height: 100vh;
 .banner-title{
   position: absolute;
   top: 12vh;
+
+
 }
+
+
+
+
 
 .form-home-section{
   position: absolute;
