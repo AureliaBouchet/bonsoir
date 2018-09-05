@@ -3,7 +3,7 @@
   justify-content:center;
 
   a{
-    color:#040711;
+    color:$black;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -19,8 +19,8 @@
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     color: white;
-    background-color: #040711;
-    border: 1px solid #040711;
+    background-color: $black;
+    border: 1px solid $black;
     cursor: default;
     width: 150px;
     text-decoration: none;
@@ -33,7 +33,7 @@
 
     margin-right: 0px;
     line-height: 1.428571429;
-    border: 1px solid #040711;
+    border: 1px solid $black;
     border-radius:0;
     width: 150px;
  text-align: center;
@@ -43,7 +43,7 @@
 .nav-tabs > li > a:hover{
   background-color: white;
   text-decoration: bold;
-  border: 1px solid #040711;
+  border: 1px solid $black;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 1px 0 0 rgba(0,0,0,0.3);
 }
 
@@ -53,7 +53,7 @@
 
 .trait{
   background-color:white;
-  border-bottom: 1px solid #040711;
+  border-bottom: 1px solid $black;
   width: 50px;
 
   height: 22px;
@@ -78,7 +78,7 @@
 }
 
 // .traitleft{
-//   border-bottom: 1px solid #040711;
+//   border-bottom: 1px solid $black;
 //   width: 40px;
 //   height:22px;
 //   position: absolute;
@@ -86,7 +86,7 @@
 //   left: 523px;
 // }
 // .traitright{
-//   border-bottom: 1px solid #040711;
+//   border-bottom: 1px solid $black;
 //   width: 40px;
 //     height:22px;
 //   position: absolute;
