@@ -6,7 +6,7 @@
   // padding: 15px;
   margin-bottom: 5px;
   font-size: 14px;
-  color: #040711;
+  color: $black;
   // width: 50%;
   // position: absolute;
   left:25%;
@@ -16,15 +16,15 @@
 .alert-info {
   margin-top: 20px;
   background: white;
-  border-top: 1px solid #040711;
-  border-bottom: 1px solid #040711;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
   border-radius: 0px;
 }
 .alert-warning {
  margin-top: 20px;
   background: white;
-  border-top: 1px solid #040711;
-  border-bottom: 1px solid #040711;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
   border-radius: 0px;
 }
 
