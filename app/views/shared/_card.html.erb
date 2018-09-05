@@ -1,0 +1,47 @@
+<div class="card-border-white-small">
+
+<!-- Card de face -->
+  <div class="card card-big" >
+    <div class="card-hover-small">
+
+      <div class="event-details">
+        <h3><%=event.title%></h3>
+        <p><%=event.description.split("De ")[0]%></p>
+        <p class="small-p">De <%=event.description.split("De")[1]%></p>
+        <p class="small-p"> <%=event.price%></p>
+      </div>
+
+    </div>
+  </div>
+
+
+
+      <div class="topcard-small">
+        <strong><%=event.time.slice(0..4) %></strong>
+        <div class="topcard-address">
+          <p><%=event.venue%>
+          <em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
+        </div>
+      </div>
+
+
+      <div class="links">
+        <ul class="list-inline">
+
+          <li class="copy-link">
+             <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0; width: 2px;" ></input>
+             <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" data-placement="top" title="click to copy"></i>
+          </li>
+        </ul>
+      </div>
+
+      <div class="infos">
+            <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.slice(0..4).gsub('h', ':')}" + "#pricePart" %>
+            <%= link_to "Réserver", url_booking, class: "btn btn-reserver", target: '_blank' %>
+       </div>
+  </div>
+
+
+
+
+

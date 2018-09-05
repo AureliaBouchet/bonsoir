@@ -15,6 +15,19 @@
   // border: solid 1px black;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.22);
 }
+
+.card-border-white-small{
+  background-color:white;
+  // padding:10px;
+
+  border-radius:2px;
+  position:relative;
+  height:500px;
+  width:350px !important;
+  // border: solid 1px black;
+  border-right: 4px solid #82040E;
+}
+
 .slick-slide {
   // border-style: solid;
   // border-color: #040711;
@@ -145,6 +158,17 @@ padding: 0px 0px !important;
   border-bottom:solid 1px black;
   height: 100%;
 }
+
+  .card-hover-small {
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  border-top:solid 1px black;
+  border-bottom:solid 1px black;
+
+}
 .card:hover .card-hover {
   opacity: 1;
   font-size:15px;
@@ -216,15 +240,26 @@ padding: 0px 0px !important;
   font-size: 16px
 }
 
-.info-window {
-  height: 270px;
-  width: 200px;
+// .info-window {
+//   height: 90px;
+//   width: 30px;
+// }
+
+
+.gm-style-iw{
+    max-width: 100px;
+    max-height: 150px;
+    display: flex;
+    align-items: center;
+
 }
 
 .card-small {
-  height: 270px;
-  width: 200px;
-  margin: 0px;
+  height: 150px;
+  width: 95px;
+  margin: -50px -2px;
+
+
   background-size: cover !important;
   h2 {
     font-size:12px;
@@ -235,7 +270,7 @@ padding: 0px 0px !important;
     font-size: 8px;
     padding:0;
     margin:0;
-  font-family:$body-font;
+    font-family:$body-font;
   }
 }
 .card.card-big {
@@ -286,6 +321,13 @@ a:hover {
   font-size:16px;
   margin: 7px 2px 0px 5px;
 }
+
+.topcard-small{
+  display: flex;
+  justify-content: space-around;
+  font-size:16px;
+}
+
 .btn.btn-primary{
   width:100%;
   height: 80%;

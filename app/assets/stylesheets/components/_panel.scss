@@ -1,0 +1,22 @@
+.map-container {
+    position: relative;
+}
+
+#panels {
+  position: absolute;
+  z-index: 30;
+  width: 350px;
+  top: 0;
+  bottom: 0;
+  background: white;
+  left: -350px;
+  transition: left ease .5s;
+
+  &.show {
+    left: 0px;
+  }
+}
+
+
+
+

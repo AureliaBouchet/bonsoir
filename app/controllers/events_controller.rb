@@ -61,7 +61,7 @@ class EventsController < ApplicationController
           url: 'map_marker.png',
 
         },
-        infoWindow: { content: render_to_string(partial: "/events/map_box", locals: { event: event }) }
+        infoWindow: { content: render_to_string(partial: "/events/map_box", locals: { event: event })}
       }
     end
 
@@ -73,6 +73,8 @@ class EventsController < ApplicationController
         url: 'markers-google-api-red.png',
       },
       title: "Vous êtes ici",
+      # details: event.id.to_s,
+
     }
   end
 

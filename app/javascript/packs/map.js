@@ -28,9 +28,13 @@ if (eventTabMapBtn) {
       const mapElementXs = document.getElementById('map_xs');
       mapElementXs.cssText = "width:100%; height: 500px;";
       if (mapElementXs) { // don't try to build a map if there's no div#map to inject in
-        const mapXs = new GMaps({ el: '#map_xs', lat: 0, lng: 0 });
+        const mapXs = new GMaps({ el: '#map_xs', lat: 0, lng: 0, disableDefaultUI: true, });
         const markersXs = JSON.parse(mapElementXs.dataset.markers);
-        mapXs.addMarkers(markersXs);
+        const markersXsClick = markersXs.map((marker) => {
+          marker.click = () => { displayDetails(marker.id) };
+          return marker;
+        })
+        mapXs.addMarkers(markersXsClick);
 
 
 
