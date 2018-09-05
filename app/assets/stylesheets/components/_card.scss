@@ -407,3 +407,22 @@ a:hover {
 
 }
 
+.tooltip-inner{
+  width: 100px;
+  height: 50px;
+  vertical-align: center;
+}
+
+.map-cursor{
+  padding: 10px;
+
+}
+
+.map-cursor:hover {
+  cursor: pointer;
+}
+
+.tooltip-before-copy, .tooltip-after-copy {
+  padding: 10px;
+
+}

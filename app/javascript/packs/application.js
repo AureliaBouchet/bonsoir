@@ -1,4 +1,7 @@
 import "bootstrap";
+import ClipboardJS from "clipboard";
+
+new ClipboardJS('.btn-clip');
 
 import "../components/flatpickr";
 import { loadDynamicLogoText } from '../components/logo';
