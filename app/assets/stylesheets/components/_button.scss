@@ -24,5 +24,21 @@
   &:hover{
     color:white
   }
+}
 
+.btn-reserver{
+  border-radius:5px;
+  // border:solid 1px $light-gray;
+  padding: 5px 10px;
+  font-size:16px;
+  color: white;
+  background-color: #82040E;
+  opacity: 0.8;
+  // height: 20px;
+  // width: 30px;
+  &:hover {
+    color: white;
+    opacity: 1;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(246, 247, 248, 0.6) !important;
+  }
 }
