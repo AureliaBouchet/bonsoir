@@ -89,13 +89,13 @@
                   <ul class="list-inline">
 
                     <li>
-                      <i class="fas fa-map-marker btn-circle map-show" id="map-sticker_<%=event.id%>" data-event-id="<%=event.id%>"></i>
+                      <i class="fas fa-map-marker btn-circle map-show" id="map-sticker_<%=event.id%>" data-event-id="<%=event.id%>" data-toggle="tooltip" data-placement="top" title="Voir sur une carte"></i>
                       <i class="fas fa-map-marker btn-circle map-hidden hidden" id="map-hidden-<%=event.id%>"></i>
                     </li>
 
                     <li class="copy-link">
-                       <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0; width: 2px;" ></input>
-                       <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" data-placement="top" title="click to copy"></i>
+                       <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0; width:10px" ></input>
+                       <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Partager le lien" ></i>
                     </li>
 
 
@@ -139,6 +139,8 @@
     const input = document.getElementById(id);
     console.log(input);
     input.select()
+    console.log
+
     document.execCommand("copy");
   }
 </script>
