@@ -142,6 +142,7 @@ if (eventTabMapBtn) {
 
 // Petite map
 const theParent = document.querySelector(".card-container");
+if (theParent) {
 theParent.addEventListener('click', doTheMap, false)
 function doTheMap(e) {
   if (e.target.getAttribute("class") === "fas fa-map-marker btn-circle map-hidden") {
@@ -194,7 +195,7 @@ function doTheMap(e) {
       origin: [markerUser.lat, markerUser.lng],
       destination: [markerId.lat, markerId.lng],
       travelMode: 'walking',
-      strokeColor: '#82040E',
+      strokeColor: '#A20910',
       strokeOpacity: 1,
       strokeWeight: 3,
     });
@@ -287,7 +288,7 @@ function doTheMap(e) {
 
   }
 };
-
+}
 // if (eventTabMapBtnXxs) {
 //   eventTabMapBtnXxs.addEventListener('click', () => {
 //     window.setTimeout( () => {

@@ -4,7 +4,6 @@ function DisplayTooltipOnClick() {
   if (card) {
     button.addEventListener('click', () => {
 
-      // button.classList.toggle('search-hidden');
 
     });
   }
