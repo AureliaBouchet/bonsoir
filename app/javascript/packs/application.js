@@ -58,3 +58,6 @@ $('.slick-caroussel').slick({
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+import { displayDetails } from '../components/small-event';
+global.displayDetails = displayDetails;

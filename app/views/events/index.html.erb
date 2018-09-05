@@ -130,12 +130,21 @@
           margin-top: 15px;"
           data-markers="<%= @markers.to_json %>">
         </div>
-
+        <!-- PANEL -->
+        <div id="panels">
+          <% @events.each do |event| %>
+            <div class="event-card hidden" data-panel-id="<%= event.id %>">
+              <%= render 'shared/card', event: event %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
 <!-- fin TAB CARTE -->
   </div>
 <% end %>
+
+
 
 
 <script>
@@ -156,5 +165,7 @@
 
   }
 </script>
+
+
 
 
