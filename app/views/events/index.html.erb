@@ -95,7 +95,8 @@
 
                     <li class="copy-link">
                        <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0; width:10px" ></input>
-                       <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Partager le lien" ></i>
+                       <i onclick="copyText(<%= event.id %>)" id="tooltip" value="test" class="fas fa-link" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Partager le lien" ></i>
+                        <i id="tooltip2" value="test" class="fas fa-link hidden" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Copié!" ></i>
                     </li>
 
 
@@ -139,9 +140,16 @@
     const input = document.getElementById(id);
     console.log(input);
     input.select()
-    console.log
-
     document.execCommand("copy");
+    const tooltip = document.getElementById("tooltip")
+    const tooltip2 = document.getElementById("tooltip2")
+    tooltip.classList.add('hidden')
+    tooltip2.classList.remove('hidden')
+    // console.log(tooltip)
+    // tooltip.removeAttribute("title")
+    // console.log(tooltip)
+    // tooltip.setAttribute("data-original-title",'Copié!')
+
   }
 </script>
 
