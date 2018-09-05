@@ -39,6 +39,7 @@
             <% url_booking = "#{event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{event.date.year.to_s}" + "-" + "#{event.date.month.to_s}" + "-" + "#{event.date.day.to_s}" + "+" + "#{event.time.slice(0..4).gsub('h', ':')}" + "#pricePart" %>
             <%= link_to "Réserver", url_booking, class: "btn btn-reserver", target: '_blank' %>
        </div>
+
   </div>
 
 
