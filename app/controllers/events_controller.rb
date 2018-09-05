@@ -7,13 +7,13 @@ class EventsController < ApplicationController
 
 
     if params[:date].present? && params[:location].present?
-      events = Event.where(date: params[:date]).near(params[:location], params[:distance].blank? ? 10 : params[:distance]).select {|event| event.rating}.sort_by(&:rating).reverse
+      events = Event.where(date: params[:date]).near(params[:location], params[:distance].blank? ? 3 : params[:distance]).select {|event| event.rating}.sort_by(&:rating).reverse
       @events = CheckAvailabilityHoursJob.perform_now(events)
     elsif params[:date].present? && params[:location].empty?
       events = Event.where(date: params[:date]).select {|event| event.rating}.sort_by(&:rating).reverse
       @events = CheckAvailabilityHoursJob.perform_now(events)
     elsif params[:date].empty? && params[:location].present?
-      events = Event.near(params[:location], params[:distance].blank? ? 10 : params[:distance]).select {|event| event.rating}.sort_by(&:rating).reverse
+      events = Event.near(params[:location], params[:distance].blank? ? 3 : params[:distance]).select {|event| event.rating}.sort_by(&:rating).reverse
       @events = CheckAvailabilityHoursJob.perform_now(events)
     else
       events = Event.all.select {|event| event.rating}.sort_by(&:rating).reverse
@@ -25,13 +25,13 @@ class EventsController < ApplicationController
   #   flash[:alert] = "Dommage! Toutes les pièces de théatre autour de vous affichent complet. Elargissez votre périmètre géographique ou choisissez une autre soirée"
   # else
     if @events.size == 1
-      flash.now[:alert] = "Il ne reste plus qu'une pièce de théâtre disponible autour de vous ce soir. Dépêchez-vous ou modifiez vos critères de recherche !"
+      flash.now[:alert] = "Seule une pièce de théâtre correspond à votre recherche. Pour afficher plus de résultats, modifiez vos critères !"
     # elsif @events.size == 0
     #   flash[:alert] = none
     elsif @events.size == 5
-      flash.now[:alert] = "Voici les #{@events.size} pièces de théâtre sélectionnées autour de vous. Bonsoir."
+      flash.now[:alert] = "Découvrez les #{@events.size} pièces de théâtre sélectionnées pour vous."
     else
-      flash.now[:alert] = "Voici les #{@events.size} pièces de théâtre sélectionnées autour de vous. Pour afficher plus de résultats, modifiez vos critères de recherche !"
+      flash.now[:alert] = "Seules #{@events.size} pièces de théâtre correspondent à votre recherche. Pour afficher plus de résultats, modifiez vos critères !"
     end
 
   end
