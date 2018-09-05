@@ -142,6 +142,7 @@ if (eventTabMapBtn) {
 
 // Petite map
 const theParent = document.querySelector(".card-container");
+if (theParent) {
 theParent.addEventListener('click', doTheMap, false)
 function doTheMap(e) {
   if (e.target.getAttribute("class") === "fas fa-map-marker btn-circle map-hidden") {
@@ -287,7 +288,7 @@ function doTheMap(e) {
 
   }
 };
-
+}
 // if (eventTabMapBtnXxs) {
 //   eventTabMapBtnXxs.addEventListener('click', () => {
 //     window.setTimeout( () => {

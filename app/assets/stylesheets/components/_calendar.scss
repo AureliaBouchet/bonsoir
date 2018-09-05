@@ -45,7 +45,7 @@
 // tous les jours
 .flatpickr-day, .flatpickr-day.nextMonthDay {
   background: grey;
-  color: black;
+  color: $black;
 }
 .flatpickr-day.nextMonthDay.disabled {
   background: rgba(4,7,17,1);
@@ -65,7 +65,7 @@
 
 .flatpickr-day.selected, .flatpickr-day.selected:focus, .flatpickr-day.selected:hover {
   background: white;
-  color: black;
+  color: $black;
   border-color: white;
 }
 
