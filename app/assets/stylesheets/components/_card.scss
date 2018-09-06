@@ -415,6 +415,9 @@ a:hover {
   color: $black;
   opacity: 1 !important;
   border: solid 1px $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .tooltip.top .tooltip-arrow {
   font-size: 14px !important;

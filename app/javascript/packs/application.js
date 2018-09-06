@@ -29,6 +29,7 @@ import 'slick-carousel/slick/slick-theme.css';
 $('.slick-caroussel').slick({
  slidesToShow: 1,
  // slidesToScroll: 2,
+ // accessibility: true,
  focusOnSelect: true,
  dots: true,
  centerMode: true,
