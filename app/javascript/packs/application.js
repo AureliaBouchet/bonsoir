@@ -15,6 +15,12 @@ formGeoloc();
 import { DisplayingSearchWhenClick } from  '../components/button';
 DisplayingSearchWhenClick();
 
+import { scrollDownToAnchor, scrollUpToAnchor } from '../components/transition-home';
+scrollDownToAnchor();
+scrollUpToAnchor();
+
+// carousel
+
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
