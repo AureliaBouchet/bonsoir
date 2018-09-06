@@ -69,8 +69,13 @@ class EventsController < ApplicationController
       lng: location_r[0].data["geometry"]["location"]["lng"],
       icon: {
         url: 'marker-rouge-1.png',
+        labelOrigin: {x: 20, y: 70}
       },
-      title: "vous êtes ici !",
+      label: {text: "Vous êtes ici !",
+      color: '#A20910',
+      fontWeight: 'bold',
+      fontFamily: '$body-font'
+      }
       # details: event.id.to_s,
 
     }
