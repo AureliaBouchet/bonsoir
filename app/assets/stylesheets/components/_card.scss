@@ -34,8 +34,8 @@
 
 .close-small {
     position: absolute;
-    top: 50px;
-    right: 10px;
+    top: -6px;
+    right: 4px;
     z-index: 90;
     cursor: pointer;
 }
@@ -344,6 +344,11 @@ a:hover {
   display: flex;
   justify-content: space-around;
   font-size:16px;
+  padding-top: 10px;
+  line-height: 1;
+  p{
+    margin:0;
+  }
 }
 
 .btn.btn-primary{
