@@ -19,8 +19,14 @@
       <div class="topcard-small">
         <strong><%=event.time.slice(0..4) %></strong>
         <div class="topcard-address">
-          <p><%=event.venue%>
-          <em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
+          <% if event.venue.length > 30 %>
+            <p><%=event.venue%><em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
+          <% else %>
+            <p><%=event.venue%></p>
+            <p><em class="small-p"><%=event.address.slice(-5..-1)%></em></p>
+
+          <%end  %>
+
         </div>
       </div>
 
