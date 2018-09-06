@@ -10,11 +10,15 @@ function displayDetails(id) {
 }
 
 function hideDetails() {
-  const button = document.getElementById('close-panel');
-  if (button) {
-    button.addEventListener('click', () => {
-      const panels = document.getElementById("panels");
-      panels.classList.remove("show");
+
+  const buttons = document.querySelectorAll('#close-panel, #list-view, #map-view');
+  if (buttons) {
+    buttons.forEach((button)=>{
+      button.addEventListener('click', () => {
+        const panels = document.getElementById("panels");
+        panels.classList.remove("show");
+        console.log("test bouton");
+      })
     })
   }
 }
