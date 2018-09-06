@@ -16,7 +16,7 @@
   </div>
 
 
-  <div class="banner-arrow-down">
+  <div class="banner-arrow-down" id="arrow-down">
 <!--   <p style= "margin:0px;"></p> -->
 
     <%= link_to root_path(anchor: 'information'), class: "link" do %>
@@ -28,16 +28,16 @@
 
 <div class="information-container" id="information">
 
-  <div class="banner-arrow-up">
-    <%= link_to root_path(anchor: 'home-top'), class: "link" do %>
-    <i class="fas fa-caret-up" style="color: $black;"> </i>
+  <div class="banner-arrow-up" id="arrow-up">
+  <%= link_to root_path(anchor: 'home-top'), class: "link" do %>
+    <i class="fas fa-caret-up" style="color: black;"> </i>
   <%end%>
     <!-- <p style= "margin:0px; color: $black;"></p> -->
   </div>
 
   <!--     <h1>Pourquoi nous ?</h1> -->
 
-    <h2>Bonsoir : la promesse d'une soirée réussie</h2>
+    <!-- <h2>Bonsoir : la promesse d'une soirée réussie</h2> -->
   <div class="information-section">
     <div class="information-content">
       <div class="information-icon">
@@ -50,14 +50,14 @@
       <div class="information-icon">
         <i class="fas fa-calendar-check"></i></div>
       <h4>Disponibilité</h4>
-      <p>Une recherche en temps réel limitée aux places disponibles</p>
+      <p>Une recherche en temps réel des places disponibles même à la dernière minute</p>
     </div>
 
     <div class="information-content">
       <div class="information-icon">
         <i class="fas fa-map-marker-alt"></i></div>
       <h4>Proximité</h4>
-      <p>Un filtre géographique pour trouver les théâtres proches de vous</p>
+      <p>Un filtre sélectionnant les théâtres les plus proches de vous</p>
     </div>
   </div>
 

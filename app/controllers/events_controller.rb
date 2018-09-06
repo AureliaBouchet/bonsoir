@@ -56,7 +56,7 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         icon: {
-          url: 'map_marker.png',
+          url: 'marker-gris-1.png',
 
         },
         infoWindow: { content: render_to_string(partial: "/events/map_box", locals: { event: event })}
@@ -68,9 +68,9 @@ class EventsController < ApplicationController
       lat: location_r[0].data["geometry"]["location"]["lat"],
       lng: location_r[0].data["geometry"]["location"]["lng"],
       icon: {
-        url: 'markers-google-api-red.png',
+        url: 'marker-rouge-1.png',
       },
-      title: "Vous êtes ici",
+      title: "vous êtes ici !",
       # details: event.id.to_s,
 
     }
