@@ -1,11 +1,9 @@
-function scrollDownToAnchor() {
+function clickDownToAnchor() {
   const element = document.getElementById('arrow-down');
-console.log(element);
   if (element) {
     element.addEventListener('click', (event) => {
       event.preventDefault();
-      // const anchordown = document.querySelector('#arrow-down .link')
-      // console.log(anchordown);
+      element.classList.add('hidden')
       const infoanchor = document.getElementById('information')
       infoanchor.scrollIntoView({
             behavior: 'smooth'
@@ -14,14 +12,27 @@ console.log(element);
   }
 }
 
-function scrollUpToAnchor() {
+function scrollToAnchor() {
+  const element = document.getElementById('arrow-down');
+  if (element) {
+    window.addEventListener('wheel', function (event) {
+      if (event.deltaY < 0) {
+        element.classList.remove('hidden')
+      }
+      if (event.deltaY > 0) {
+        element.classList.add('hidden')
+      }
+    });
+  }
+}
+
+function clickUpToAnchor() {
   const element = document.getElementById('arrow-up');
-console.log(element);
   if (element) {
     element.addEventListener('click', (event) => {
       event.preventDefault();
-      // const anchordown = document.querySelector('#arrow-down .link')
-      // console.log(anchordown);
+      const arrow_down = document.getElementById('arrow-down');
+      arrow_down.classList.remove('hidden')
       const infoanchor = document.getElementById('home-top')
       infoanchor.scrollIntoView({
             behavior: 'smooth'
@@ -31,4 +42,4 @@ console.log(element);
 }
 
 
-export { scrollDownToAnchor, scrollUpToAnchor };
+export { scrollToAnchor, clickDownToAnchor, clickUpToAnchor };
