@@ -83,6 +83,16 @@ class EventsController < ApplicationController
 
   def show
   @event = Event.find(params[:id])
+
+  @marker = {
+      id: @event.id.to_s,
+      lat: @event.latitude,
+      lng: @event.longitude,
+      icon: {
+        url: 'marker-gris-1.png',
+      },
+    }
+
   end
 
 

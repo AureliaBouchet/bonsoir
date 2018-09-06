@@ -407,7 +407,15 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
-
+.card-show-map{
+   background-color:white;
+  border-radius:2px;
+  position:relative;
+  height:500px;
+  width:700px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+  margin:auto;
+}
 
 .tooltip.top .tooltip-inner {
   font-size: 14px !important;
