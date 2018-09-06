@@ -15,9 +15,10 @@ formGeoloc();
 import { DisplayingSearchWhenClick } from  '../components/button';
 DisplayingSearchWhenClick();
 
-import { scrollDownToAnchor, scrollUpToAnchor } from '../components/transition-home';
-scrollDownToAnchor();
-scrollUpToAnchor();
+import { scrollToAnchor, clickDownToAnchor, clickUpToAnchor } from '../components/transition-home';
+scrollToAnchor();
+clickDownToAnchor();
+clickUpToAnchor();
 
 // carousel
 
