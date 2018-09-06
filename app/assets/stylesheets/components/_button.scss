@@ -7,15 +7,13 @@
 
 .btn-home {
   border-radius: 4px;
-
   margin: 0px;
-
   padding: 5px 10px;
-
   color: #040711;
   opacity: 1;
-  font-family: "Poiret One" !important;
-  font-size: 20px !important;
+  height: 39px;
+  // font-family: "Poiret One" !important;
+  font-size: 16px !important;
 
   &:hover {
     opacity: 0.8;
