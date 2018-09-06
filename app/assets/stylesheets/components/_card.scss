@@ -169,6 +169,7 @@ padding: 0px 0px !important;
   border-top:solid 1px $black;
   border-bottom:solid 1px $black;
   height: 100%;
+  position: relative;
 }
 
   .card-hover-small {
@@ -209,16 +210,28 @@ padding: 0px 0px !important;
   // text-align:left;
 }
 .small-p{
-    font-size: 12px;
-    font-style: normal;
+    font-size: 13px;
+    font-style: italic;
   }
+
+.small-p-price{
+  font-size: 14px;
+  font-style: bold;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
 .event-details {
   padding: 10px;
   h3 {
-    font-size: 18px;
+    font-size: 22px;
     margin: 15px 0;
     text-align: center;
     color:  $black;
+  }
+  p {
+    padding-top: 15px;
   }
 }
 // .card-description{
