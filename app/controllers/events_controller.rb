@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   def index
-
     params[:date] = Date.today.strftime('%Y-%m-%d') unless params[:date].present?
     params[:location] = "Paris, France" if params[:location] == "Indiquez un lieu" || params[:location] == ""
-    # params[:distance].downcase.gsub("km", '') if params[:distance].include?("km")
+    params[:distance] = params[:distance].downcase.gsub(/\D/, '')
+
 
 
     if params[:date].present? && params[:location].present?
