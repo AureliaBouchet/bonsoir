@@ -71,9 +71,11 @@
                       data-markers="<%= @markers.to_json %>">
                     </div>
                     <!-- <div> -->
-                    <i id="duration-<%=event.id%>" class="fas fa-walking duration hidden">
-                     <!--  <i class=""></i> -->
-                    </i>
+                    <div class="duration hidden" id="walking-<%= event.id  %>">
+                      <i class="fas fa-walking"></i>
+                      <p id="duration-<%=event.id%>"></p>
+                    </div>
+
                   <!--   </div> -->
                 </div>
 
@@ -105,8 +107,8 @@
 
                     <li class="copy-link">
                        <button class="btn-clip" data-clipboard-text="<%= event_url(event) %>">
-                        <i onclick="changeTootltip(<%= event.id %>)" id="tooltip_<%=event.id%>" value="test" class="fas fa-link tooltip-before-copy" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Partager le lien" ></i>
-                        <i  id="tooltip2_<%=event.id%>" value="test" class="fas fa-link hidden tooltip-after-copy" data-toggle="tooltip" template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'>Test</div></div>" data-placement="top" title="Copié !" ></i>
+                        <i onclick="changeTootltip(<%= event.id %>)" id="tooltip_<%=event.id%>" value="test" class="fas fa-link tooltip-before-copy" data-toggle="tooltip"  data-placement="top" title="Partager le lien" ></i>
+                        <i  id="tooltip2_<%=event.id%>" value="test" class="fas fa-link hidden tooltip-after-copy" data-toggle="tooltip"  data-placement="top" title="Copié !" ></i>
                        </button>
                     </li>
 
@@ -156,16 +158,20 @@
 
 <script>
   function changeTootltip(id) {
-    console.log(`tooltip_${id}`)
+    console.log(id);
     const tooltip = document.getElementById(`tooltip_${id}`);
     const tooltip2 = document.getElementById(`tooltip2_${id}`);
-    console.log(tooltip2);
     tooltip.classList.add('hidden');
-    console.log("1st step");
     tooltip2.classList.remove('hidden');
-    console.log("2nd step");
   }
 
+  function changeTootltipMap(id) {
+    console.log(id);
+    const tooltip = document.getElementById(`tooltip_map_${id}`);
+    const tooltip2 = document.getElementById(`tooltip2_map_${id}`);
+    tooltip.classList.add('hidden');
+    tooltip2.classList.remove('hidden');
+  }
 </script>
 
 

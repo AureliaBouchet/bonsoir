@@ -161,7 +161,9 @@ function doTheMap(e) {
     div_to_toggle.classList.remove('hidden')
     const id = e.target.dataset.eventId;
     const durationDiv = document.getElementById(`duration-${id}`);
-    durationDiv.classList.remove('hidden')
+    durationDiv.classList.remove('hidden');
+    const walkingDiv = document.getElementById(`walking-${id}`);
+    walkingDiv.classList.remove('hidden');
     document.getElementById(`map-hidden-${id}`).classList.remove('hidden');
     e.target.classList.add('hidden');
     const mapXxs = new GMaps({ el: `#${id_for}`, lat: 0, lng: 0, disableDefaultUI: true, });

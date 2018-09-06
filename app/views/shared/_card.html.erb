@@ -27,10 +27,11 @@
 
       <div class="links">
         <ul class="list-inline">
-
           <li class="copy-link">
-             <input id="<%= event.id %>" type="text" value="<%= event_url(event) %>" style="opacity: 0; width: 2px;" ></input>
-             <i onclick="copyText(<%= event.id %>)" value="test" class="fas fa-link" data-toggle="tooltip" data-placement="top" title="click to copy"></i>
+             <button class="btn-clip" data-clipboard-text="<%= event_url(event) %>">
+              <i onclick="changeTootltipMap(<%= event.id %>)" id="tooltip_map_<%=event.id%>" value="test" class="fas fa-link tooltip-before-copy" data-toggle="tooltip" data-placement="top" title="Partager le lien" ></i>
+              <i  id="tooltip2_map_<%=event.id%>" value="test" class="fas fa-link hidden tooltip-after-copy" data-toggle="tooltip" data-placement="top" title="Copié !" ></i>
+             </button>
           </li>
         </ul>
       </div>
