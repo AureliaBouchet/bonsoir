@@ -145,7 +145,7 @@ const theParent = document.querySelector(".card-container");
 if (theParent) {
 theParent.addEventListener('click', doTheMap, false)
 function doTheMap(e) {
-  if (e.target.getAttribute("class") === "fas fa-map-marker map-hidden map-cursor") {
+  if (e.target.getAttribute("class") === "fas fa-map-marker-alt map-hidden map-cursor") {
     const maps = document.querySelectorAll('.card-map > div');
     maps.forEach((map) => {map.classList.add('hidden')});
     const maps2 = document.querySelectorAll('.card-map > i');
@@ -153,7 +153,7 @@ function doTheMap(e) {
     document.querySelectorAll('.map-hidden').forEach(btn => {btn.classList.add('hidden')});
     document.querySelectorAll('.map-show').forEach(btn => {btn.classList.remove('hidden')});
   }
-  if (e.target.getAttribute("class") === "fas fa-map-marker map-show map-cursor") {
+  if (e.target.getAttribute("class") === "fas fa-map-marker-alt map-show map-cursor") {
     const maps = document.querySelectorAll('.card-map > div');
     maps.forEach((map) => {map.classList.add('hidden')})
     var id_for = e.target.getAttribute("id");
