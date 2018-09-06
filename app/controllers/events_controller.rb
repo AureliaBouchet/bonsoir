@@ -74,7 +74,7 @@ class EventsController < ApplicationController
       label: {text: "Vous êtes ici !",
       color: '#A20910',
       fontWeight: 'bold',
-      fontFamily: '$body-font'
+      fontFamily: 'Quicksand'
       }
       # details: event.id.to_s,
 
