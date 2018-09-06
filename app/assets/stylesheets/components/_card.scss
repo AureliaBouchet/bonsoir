@@ -251,7 +251,8 @@ padding: 0px 0px !important;
 .topcard-address{
   width: 250px;
   text-align:right;
-  font-size: 16px
+  font-size: 16px;
+  line-height: 1;
 }
 
 // .info-window {
@@ -334,6 +335,10 @@ a:hover {
   justify-content: space-around;
   font-size:16px;
   margin: 7px 2px 0px 5px;
+  line-height: 1;
+  p{
+    margin:0;
+  }
 }
 
 .topcard-small{
