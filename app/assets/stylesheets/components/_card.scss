@@ -64,13 +64,13 @@
   display: flex;
   justify-content: center;
   align-items:center;
-  width: 500px !important;
+  width: 500px ;
 }
 .slick-slide.slick-cloned{
   display: flex;
   justify-content: center;
   align-items:center;
-  width: 500px !important;
+  width: 500px ;
 }
 .slick-slide.slick-current.slick-active.slick-center{
   transform: scale(1.08);
@@ -94,20 +94,57 @@
   width: 1100px;
   padding-bottom: 10px;
 }
+
+
 @media all and (max-width: 768px)
 {
   .slick-caroussel{
-    width: 500px;
+    width: 100vw;
     padding-bottom:5px;
 }
+
+.card-container {
+      height: 92vh;
+}
+
+// #slick-slide01, #slick-slide02, #slick-slide03, #slick-slide04,#slick-slide05{
+//   display: flex;
+//   justify-content: center;
+//   align-items:center;
+//   width: 400px !important;
+// }
+// .slick-slide.slick-cloned{
+//   display: flex;
+//   justify-content: center;
+//   align-items:center;
+//   width: 400px !important;
+// }
+
+.slick-slide.slick-current.slick-active.slick-center{
+  width: 100vw !important;
+  }
 .slick-list.draggable{
-height: 560px;
-width: 500px;
+height: 80vh;
+width: 100vw;
 padding: 0px 0px !important;
 }
 .slick-dots {
   padding-bottom: 5px;
 }
+.card-border-white{
+  height:70vh;
+  width:72vw !important;
+  }
+.card-big {
+  height: 52vh !important;
+  width:64vw !important;
+}
+
+.form-group.col-xs-10{
+
+  padding: 4px 4px !important;
+}
+
 }
 // .slick-prev:before, .slick-next:before { font-family: "slick"; font-size: 300px; line-height: 1; color: $black; opacity: 0.75; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 // .slick-prev:before {
