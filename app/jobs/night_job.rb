@@ -13,8 +13,8 @@ class NightJob < ApplicationJob
 
     puts "Creating events"
     date_today = Date.today
-    dates = [date_today, date_today + 1, date_today + 2, date_today + 3, date_today + 4, date_today + 5, date_today + 6 ]
-    # dates = [date_today]
+    # dates = [date_today, date_today + 1, date_today + 2, date_today + 3, date_today + 4, date_today + 5, date_today + 6 ]
+    dates = [date_today]
     dates.each do |d|
 
       result_page = 10
@@ -96,7 +96,8 @@ class NightJob < ApplicationJob
             photo_url = elt.attribute("src").value
             ph = "https://www.billetreduc.com#{photo_url}"
             photo = ph.gsub('/zg/n100', '/f700-600-0')
-            event.remote_photo_url = photo
+           event_hash[:ph_url] = photo
+            # event.remote_photo_url = photo
          # if event_hash[:venue].nil? == false || event_hash[:photo].nil? == false
         #  end
           end
@@ -108,7 +109,7 @@ class NightJob < ApplicationJob
         if result_page < total_result
           page += 1
           result_page +=10
-          run = true
+          run = false
         else
           run = false
         end
