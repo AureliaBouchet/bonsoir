@@ -21,7 +21,6 @@ geolocate();
 
 // Map dans la tab
 const eventTabMapBtn = document.getElementById("map-xs");
-console.log(eventTabMapBtn);
 if (eventTabMapBtn) {
   eventTabMapBtn.addEventListener('click', () => {
     window.setTimeout( () => {
@@ -35,8 +34,6 @@ if (eventTabMapBtn) {
           return marker;
         })
         mapXs.addMarkers(markersXsClick);
-
-
 
         if (markersXs.length === 0) {
           mapXs.setZoom(2);
@@ -134,8 +131,6 @@ if (eventTabMapBtn) {
         mapXs.setStyle('map_style');
               }
 
-
-
             } , 100);
   });
 }
@@ -145,7 +140,7 @@ const theParent = document.querySelector(".card-container");
 if (theParent) {
 theParent.addEventListener('click', doTheMap, false)
 function doTheMap(e) {
-  if (e.target.getAttribute("class") === "fas fa-map-marker map-hidden map-cursor") {
+  if (e.target.getAttribute("class") === "fas fa-map-marker-alt map-hidden map-cursor") {
     const maps = document.querySelectorAll('.card-map > div');
     maps.forEach((map) => {map.classList.add('hidden')});
     const maps2 = document.querySelectorAll('.card-map > i');
@@ -153,7 +148,7 @@ function doTheMap(e) {
     document.querySelectorAll('.map-hidden').forEach(btn => {btn.classList.add('hidden')});
     document.querySelectorAll('.map-show').forEach(btn => {btn.classList.remove('hidden')});
   }
-  if (e.target.getAttribute("class") === "fas fa-map-marker map-show map-cursor") {
+  if (e.target.getAttribute("class") === "fas fa-map-marker-alt map-show map-cursor") {
     const maps = document.querySelectorAll('.card-map > div');
     maps.forEach((map) => {map.classList.add('hidden')})
     var id_for = e.target.getAttribute("id");
@@ -291,6 +286,113 @@ function doTheMap(e) {
   }
 };
 }
+
+//MAP moyenne dans la SHOW -----------------------
+const mapElementMd = document.getElementById("map_md");
+
+if (mapElementMd) {
+  mapElementMd.cssText = "width:100%; height: 500px;";
+  if (mapElementMd) { // don't try to build a map if there's no div#map to inject in
+    const mapMd = new GMaps({ el: '#map_md', lat: 0, lng: 0, disableDefaultUI: true, });
+    const markerMd = JSON.parse(mapElementMd.dataset.marker);
+    console.log(markerMd)
+
+    mapMd.addMarkers([markerMd]);
+    mapMd.setCenter(markerMd.lat, markerMd.lng);
+    mapMd.setZoom(14);
+
+    const styles = [
+        {
+            "featureType": "administrative",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#444444"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "color": "#f2f2f2"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "saturation": -100
+                },
+                {
+                    "lightness": 45
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "visibility": "simplified"
+                }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "labels.icon",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "transit",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "color": "#4f595d"
+                },
+                {
+                    "visibility": "on"
+                }
+            ]
+        }
+    ];
+    mapMd.addStyle({
+      styles: styles,
+      mapTypeId: 'map_style'
+    });
+    mapMd.setStyle('map_style');
+  }
+}
+
+
+
+
+
 // if (eventTabMapBtnXxs) {
 //   eventTabMapBtnXxs.addEventListener('click', () => {
 //     window.setTimeout( () => {

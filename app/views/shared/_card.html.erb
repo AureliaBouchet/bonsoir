@@ -4,12 +4,12 @@
   <div class="card card-big" >
     <div class="card-hover-small">
 
-      <div class="event-details">
-        <h3><%=event.title%></h3>
-        <p><%=event.description.split("De ")[0]%></p>
-        <p class="small-p">De <%=event.description.split("De")[1]%></p>
-        <p class="small-p"> <%=event.price%></p>
-      </div>
+    <div class="event-details">
+      <h3><%=event.title%></h3>
+      <p><%=event.description.split("De ")[0]%></p>
+      <p class="small-p">De <%=event.description.split("De")[1]%></p>
+    </div>
+      <p class="small-p-price"> <%=event.price%></p>
 
     </div>
   </div>
@@ -19,7 +19,7 @@
       <div class="topcard-small">
         <strong><%=event.time.slice(0..4) %></strong>
         <div class="topcard-address">
-          <% if event.venue.length > 30 %>
+          <% if event.venue.length > 33 %>
             <p><%=event.venue%><em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
           <% else %>
             <p><%=event.venue%></p>

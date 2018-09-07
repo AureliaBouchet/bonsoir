@@ -27,7 +27,7 @@
 <!-- <div class="traitleft"></div> -->
 
     <li role="presentation"  class="active"><a id="list-view" href="#list" aria-controls="list" role="tab" data-toggle="tab"><i class="fas fa-list-ul "> </i> Notre sélection</a></li>
-    <li role="presentation" id="map-xs" ><a id="map-view" href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker "> </i> Vue carte</a></li>
+    <li role="presentation" id="map-xs" ><a id="map-view" href="#carte" aria-controls="carte" role="tab" data-toggle="tab"><i class="fas fa-map-marker-alt "> </i> Vue carte</a></li>
 <!-- <div class="traitright"></div> -->
   </ul>
 <div class="trait">
@@ -58,9 +58,8 @@
                       <h3><%=event.title%></h3>
                       <p><%=event.description.split("De ")[0]%></p>
                       <p class="small-p">De <%=event.description.split("De")[1]%></p>
-                      <p class="small-p"> <%=event.price%></p>
                     </div>
-
+                  <p class="small-p-price"> <%=event.price%></p>
                   </div>
                     <!-- Card map -->
                   <div class="card-map">
@@ -85,7 +84,7 @@
                 <div class="topcard">
                   <strong><%=event.time.slice(0..4) %></strong>
                   <div class="topcard-address">
-                    <% if event.venue.length > 30 %>
+                    <% if event.venue.length > 33 %>
                       <p><%=event.venue%><em class="small-p"> - <%=event.address.slice(-5..-1)%></em></p>
                     <% else %>
                       <p><%=event.venue%></p>
@@ -101,8 +100,8 @@
                   <ul class="list-inline">
 
                     <li>
-                      <i class="fas fa-map-marker map-show map-cursor" id="map-sticker_<%=event.id%>" data-event-id="<%=event.id%>" data-toggle="tooltip" data-placement="top" title="S'y rendre"></i>
-                      <i class="fas fa-map-marker map-hidden hidden map-cursor" id="map-hidden-<%=event.id%>"></i>
+                      <i class="fas fa-map-marker-alt map-show map-cursor" id="map-sticker_<%=event.id%>" data-event-id="<%=event.id%>" data-toggle="tooltip" data-placement="top" title="S'y rendre"></i>
+                      <i class="fas fa-map-marker-alt map-hidden hidden map-cursor" id="map-hidden-<%=event.id%>"></i>
                     </li>
 
                     <li class="copy-link">

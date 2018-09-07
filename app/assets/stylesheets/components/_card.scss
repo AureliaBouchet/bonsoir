@@ -27,17 +27,22 @@
   width:350px !important;
   // border: solid 1px $black;
 
-  // border-right: 4px solid $black;
-  box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+  border-right: 4px solid rgba(0,0,0,0.7);
+
 
 }
 
 .close-small {
     position: absolute;
-    top: -3px;
-    right: 7px;
+    top: -15px;
+    right: 10px;
     z-index: 90;
     cursor: pointer;
+    font-size: 24px;
+    color: #A6A6A6;
+    :hover {
+      color: #7F7F7F;
+    }
 }
 
 .slick-slide {
@@ -206,6 +211,7 @@ padding: 0px 0px !important;
   border-top:solid 1px $black;
   border-bottom:solid 1px $black;
   height: 100%;
+  position: relative;
 }
 
   .card-hover-small {
@@ -246,16 +252,28 @@ padding: 0px 0px !important;
   // text-align:left;
 }
 .small-p{
-    font-size: 12px;
-    font-style: normal;
+    font-size: 13px;
+    font-style: italic;
   }
+
+.small-p-price{
+  font-size: 14px;
+  font-style: bold;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
 .event-details {
   padding: 10px;
   h3 {
-    font-size: 18px;
+    font-size: 22px;
     margin: 15px 0;
     text-align: center;
     color:  $black;
+  }
+  p {
+    padding-top: 15px;
   }
 }
 // .card-description{
@@ -381,7 +399,7 @@ a:hover {
   display: flex;
   justify-content: space-around;
   font-size:16px;
-  padding-top: 15px;
+  padding-top: 10px;
   padding-left: 15px;
   padding-right: 15px;
   line-height: 1;
@@ -438,11 +456,60 @@ a:hover {
   padding-top: 2px;
   padding-bottom:1px;
 }
-
+// SHOW specifities
+.card-show-container-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card-show-container{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: nowrap !important;
+  margin-bottom: 0px;
+  margin-bottom: 40px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+  width: 1050px;
+  height: 560px;
+  margin: 30px;
+  position: relative;
+}
+.topcard-show-margin{
+  margin-top: 25px;
+}
+.card-show-big {
+  height: 90%;
+  width: 92%;
+  top: 25px;
+}
+
+.btn-reserver-center {
+  position: absolute;
+  bottom: 20px ;
+
+}
+.card-show{
+  border-top:solid 1px $black;
+  // border-bottom:solid 1px $black;
+  height: 100%;
+  margin-top: 25px;
+  text-align: justify;
+}
+.card-show-map{
+  background-color:white;
+  // padding: 5px;
+  border-radius:2px;
+  position:relative;
+  height:500px;
+  width:350px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+  margin:30px 0;
+  //
+  // margin-top: ;
+}
+.card-show-shadow{
+  box-shadow: none !important;
 }
 
 

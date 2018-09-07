@@ -29,8 +29,9 @@ class NightJob < ApplicationJob
 
       while run
 
-        url = "https://www.billetreduc.com/search.htm?cp=Paris&dt=#{d.year}-#{d_month}&idrub=103,68,90&jj=#{d_day}&nbsalle=0&prix=0&tri=date&type=3,3&LISTEPEpg=#{page}"
-
+        # url = "https://www.billetreduc.com/search.htm?cp=Paris&dt=#{d.year}-#{d_month}&idrub=103,68,90&jj=#{d_day}&nbsalle=0&prix=0&tri=date&type=3,3&LISTEPEpg=#{page}"
+        url = "https://www.billetreduc.com/search.htm?cp=Paris&dt=#{d.year}-#{d_month}&idrub=68&jj=#{d_day}&nbsalle=0&prix=0&tri=date&type=3,3&LISTEPEpg=#{page}"
+# https://www.billetreduc.com/search.htm?cp=Paris&idrub=68&=07&nbsalle=0&prix=0&tri=date&type=3,3&dt=2018-09-06
         html_file = open(url).read
         html_doc = Nokogiri::HTML(html_file)
 
