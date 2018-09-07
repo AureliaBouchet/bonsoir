@@ -419,13 +419,26 @@ a:hover {
   padding-top: 2px;
   padding-bottom:1px;
 }
-
+// SHOW specifities
 .card-show-container{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: nowrap;
+  margin-bottom: 0px;
 }
-
+.card-show-map{
+   background-color:white;
+  border-radius:2px;
+  position:relative;
+  height:500px;
+  width:700px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+  margin:auto;
+}
+.card-show-margin{
+  margin-bottom: 0px !important;
+}
 
 .tooltip.top .tooltip-inner {
   font-size: 14px !important;
