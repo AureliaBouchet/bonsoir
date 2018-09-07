@@ -35,18 +35,16 @@
   <div class="card-border-white card-show-margin">
     <div class="card card-big">
       <div class="card-show">
-        <div class="event-details">
+       <div class="event-details">
           <h3><%=@event.title%></h3>
           <p><%=@event.description.split("De ")[0]%></p>
           <p class="small-p">De <%=@event.description.split("De")[1]%></p>
-          <p class="small-p"> <%=@event.price%></p>
         </div>
-      </div>
+      <p class="small-p-price"> <%=@event.price%></p>
     </div>
   </div>
-
 </div>
-
+</div>
 <div class="card-show-map">
   <div class="map-container">
     <div
