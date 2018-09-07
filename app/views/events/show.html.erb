@@ -8,55 +8,60 @@
     <p>B<span id="logo-typed-text" style= "font-size: 50px; color: white; font-family: 'Poiret One'"></span></p>
   <%end%>
 </div>
-
+<div class="card-show-container-flex">
 <div class= "card-show-container">
 
   <!-- CARD côté affiche -->
-  <div class="card-border-white card-show-margin">
-    <div class="card card-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path @event.photo, crop: :fill %>);">
-
-    </div>
-    <div class="topcard">
-          <strong><%=@event.time.slice(0..4) %></strong>
-      <div class="topcard-address">
-      <p><%=@event.venue%>
-       <em class="small-p"> - <%=@event.address.slice(-5..-1)%></em></p>
-
-      </div>
-      </div>
-
-    <div class="infos">
-          <% url_booking = "#{@event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{@event.date.year.to_s}" + "-" + "#{@event.date.month.to_s}" + "-" + "#{@event.date.day.to_s}" + "+" + "#{@event.time.slice(0..4).gsub('h', ':')}" + "#pricePart" %>
-          <%= link_to "Réserver", url_booking, class: "btn btn-reserver", target: '_blank' %>
+  <div class="card-border-white card-show-shadow">
+    <div class="card card-show-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path @event.photo, crop: :fill %>);">
     </div>
   </div>
 
   <!-- Card coté description -->
-  <div class="card-border-white card-show-margin">
-    <div class="card card-big">
-      <div class="card-show">
-       <div class="event-details">
-          <h3><%=@event.title%></h3>
-          <p><%=@event.description.split("De ")[0]%></p>
-          <p class="small-p">De <%=@event.description.split("De")[1]%></p>
-        </div>
-      <p class="small-p-price"> <%=@event.price%></p>
-    </div>
-  </div>
-</div>
-</div>
-<div class="card-show-map">
-  <div class="map-container">
-    <div
-      id="map_md"
-      style="width: 100%;
-      height: 500px;
-      margin-top: 15px;"
-      data-marker="<%= @marker.to_json %>">
-    </div>
-  </div>
-</div>
+ <!--  <div class="card-show-margin"> -->
+    <div class="card-border-white card-show-shadow">
+      <div class="topcard topcard-show-margin">
+            <strong><%=@event.time.slice(0..4) %></strong>
+        <div class="topcard-address">
+          <% if @event.venue.length > 33 %>
+          <p><%=@event.venue%><em class="small-p"> - <%=@event.address.slice(-5..-1)%></em></p>
+        <% else %>
+          <p><%=@event.venue%></p>
+          <p><em class="small-p"><%=@event.address.slice(-5..-1)%></em></p>
 
+        <%end  %>
+
+        </div>
+      </div>
+      <div class="card card-big">
+        <div class="card-show">
+          <div class="event-details">
+            <h3><%=@event.title%></h3>
+            <p><%=@event.description.split("De ")[0]%></p>
+            <p class="small-p">De <%=@event.description.split("De")[1]%></p>
+            <p class="small-p-price"> <%=@event.price%></p>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--   </div> -->
+  <div class="card-show-map card-show-shadow">
+    <div class="map-container">
+      <div
+        id="map_md"
+        style="width: 322px;
+        height: 450px;
+        margin: 25px 14px;"
+        data-marker="<%= @marker.to_json %>">
+      </div>
+    </div>
+  </div>
+  <div class="btn-reserver-center">
+        <% url_booking = "#{@event.url_zoom.gsub('evt.htm', 'evtbook.htm')}" + "?&dh=" + "#{@event.date.year.to_s}" + "-" + "#{@event.date.month.to_s}" + "-" + "#{@event.date.day.to_s}" + "+" + "#{@event.time.slice(0..4).gsub('h', ':')}" + "#pricePart" %>
+        <%= link_to "Réserver", url_booking, class: "btn btn-reserver", target: '_blank' %>
+  </div>
+</div>
+</div>
 
 
 

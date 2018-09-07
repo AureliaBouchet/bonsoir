@@ -420,25 +420,61 @@ a:hover {
   padding-bottom:1px;
 }
 // SHOW specifities
+.card-show-container-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card-show-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap !important;
   margin-bottom: 0px;
+  margin-bottom: 40px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+  width: 1050px;
+  height: 560px;
+  margin: 30px;
+  position: relative;
+}
+.topcard-show-margin{
+  margin-top: 25px;
+}
+.card-show-big {
+  height: 90%;
+  width: 92%;
+  top: 25px;
+}
+
+.btn-reserver-center {
+  position: absolute;
+  bottom: 20px ;
+
+}
+.card-show{
+  border-top:solid 1px $black;
+  // border-bottom:solid 1px $black;
+  height: 100%;
+  margin-top: 25px;
+  text-align: justify;
 }
 .card-show-map{
-   background-color:white;
+  background-color:white;
+  // padding: 5px;
   border-radius:2px;
   position:relative;
   height:500px;
-  width:700px;
+  width:350px;
   box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
-  margin:auto;
+  margin:30px 0;
+  //
+  // margin-top: ;
 }
-.card-show-margin{
-  margin-bottom: 0px !important;
+.card-show-shadow{
+  box-shadow: none !important;
 }
+
 
 .tooltip.top .tooltip-inner {
   font-size: 14px !important;
