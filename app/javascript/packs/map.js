@@ -21,7 +21,6 @@ geolocate();
 
 // Map dans la tab
 const eventTabMapBtn = document.getElementById("map-xs");
-console.log(eventTabMapBtn);
 if (eventTabMapBtn) {
   eventTabMapBtn.addEventListener('click', () => {
     window.setTimeout( () => {
@@ -35,8 +34,6 @@ if (eventTabMapBtn) {
           return marker;
         })
         mapXs.addMarkers(markersXsClick);
-
-
 
         if (markersXs.length === 0) {
           mapXs.setZoom(2);
@@ -134,8 +131,6 @@ if (eventTabMapBtn) {
         mapXs.setStyle('map_style');
               }
 
-
-
             } , 100);
   });
 }
@@ -175,7 +170,6 @@ function doTheMap(e) {
 
     var markerUser = markersXxs[markersXxs.length - 1];
     mapXxs.addMarkers([markerId, markerUser]);
-    console.log(markerId)
 
     const duration = mapXxs.getRoutes({
       origin: [markerUser.lat, markerUser.lng],
@@ -295,19 +289,17 @@ function doTheMap(e) {
 
 //MAP moyenne dans la SHOW -----------------------
 const mapElementMd = document.getElementById("map_md");
-// console.log(mapElementMd);
-if (mapElementMd) {
-  // window.setTimeout( () => {
-      // const mapElementMd = document.getElementById('map_md');
-    mapElementMd.cssText = "width:100%; height: 500px;";
-    if (mapElementMd) { // don't try to build a map if there's no div#map to inject in
-      const mapMd = new GMaps({ el: '#map_md', lat: 0, lng: 0, disableDefaultUI: true, });
-      const markerMd = JSON.parse(mapElementMd.dataset.marker);
-      console.log(markerMd)
 
-      mapMd.addMarkers(markerMd);
-      mapMd.setCenter(markerMd.lat, markerMd.lng);
-      mapMd.setZoom(14);
+if (mapElementMd) {
+  mapElementMd.cssText = "width:100%; height: 500px;";
+  if (mapElementMd) { // don't try to build a map if there's no div#map to inject in
+    const mapMd = new GMaps({ el: '#map_md', lat: 0, lng: 0, disableDefaultUI: true, });
+    const markerMd = JSON.parse(mapElementMd.dataset.marker);
+    console.log(markerMd)
+
+    mapMd.addMarkers([markerMd]);
+    mapMd.setCenter(markerMd.lat, markerMd.lng);
+    mapMd.setZoom(14);
 
     const styles = [
         {

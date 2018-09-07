@@ -4,7 +4,6 @@
 
 
 <div class="navbar-wagon">
-
   <%= link_to root_path , class: "link" do %>
     <p>B<span id="logo-typed-text" style= "font-size: 50px; color: white; font-family: 'Poiret One'"></span></p>
   <%end%>
@@ -13,7 +12,7 @@
 <div class= "card-show-container">
 
   <!-- CARD côté affiche -->
-  <div class="card-border-white">
+  <div class="card-border-white card-show-margin">
     <div class="card card-big" style="background-image: linear-gradient(rgba(240,240,240,0.2), rgba(240,240,240,0.1)), url(<%= cl_image_path @event.photo, crop: :fill %>);">
 
     </div>
@@ -33,7 +32,7 @@
   </div>
 
   <!-- Card coté description -->
-  <div class="card-border-white">
+  <div class="card-border-white card-show-margin">
     <div class="card card-big">
       <div class="card-show">
         <div class="event-details">

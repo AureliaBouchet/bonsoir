@@ -89,7 +89,7 @@ class EventsController < ApplicationController
       lat: @event.latitude,
       lng: @event.longitude,
       icon: {
-        url: 'marker-gris-1.png',
+        url: '/marker-gris-1.png',
       },
     }
 
