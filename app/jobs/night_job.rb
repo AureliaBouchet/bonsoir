@@ -90,17 +90,16 @@ class NightJob < ApplicationJob
           event_hash[:date] = d
           event_hash[:time] = "13h33"
 
-          event = Event.new(event_hash)
-
           element.search('.photoevt').each do |elt|
             photo_url = elt.attribute("src").value
             ph = "https://www.billetreduc.com#{photo_url}"
-            photo = ph.gsub('/zg/n100', '/f700-600-0')
-            event.remote_photo_url = photo
+            event_hash[:ph_url] = ph.gsub('/zg/n100', '/f700-600-0')
+            # event.remote_photo_url = photo
          # if event_hash[:venue].nil? == false || event_hash[:photo].nil? == false
         #  end
           end
 
+          event = Event.new(event_hash)
           event.save
           # p event
         end
